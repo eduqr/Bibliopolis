@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bibliopolis.Views"
         mc:Ignorable="d"
-        Title="Gestionar bibliotecarios" Height="550" Width="800">
+        Title="Gestionar bibliotecarios" Height="570" Width="800">
    
     <Grid >
-        <Label Content="ID Bibliotecario" HorizontalAlignment="Left" Height="24" Margin="11,16,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
+        <Label Content="ID Bibliotecario" HorizontalAlignment="Left" Height="24" Margin="2,28,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
 
         <TextBox x:Name="TXT_PkLibrarian"
+                             
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Montserrat"                            
@@ -28,7 +29,7 @@
                                         AlignmentX="Left"/>
             </TextBox.Background>
         </TextBox>
-        <TextBox x:Name="TXT_Name"
+        <TextBox x:Name="TXT_Name"           
             FontSize="13"
             FontWeight="Medium"
             FontFamily="Montserrat"                            
@@ -46,7 +47,7 @@
                     AlignmentX="Left"/>
             </TextBox.Background>
         </TextBox>
-        <Label Content="Nombre" HorizontalAlignment="Left" Height="24" Margin="7,73,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Height="24" Margin="2,85,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
         <TextBox x:Name="TXT_Lastname"
             FontSize="13"
             FontWeight="Medium"
@@ -59,14 +60,15 @@
             VerticalContentAlignment="Center"
             Margin="15,155,640,350"
             Padding="20,0,0,0">
+            
             <TextBox.Background>
                 <ImageBrush ImageSource="/Images/user.png"
                     Stretch="None"
                     AlignmentX="Left"/>
             </TextBox.Background>
         </TextBox>
-        <Label Content="Apellido" HorizontalAlignment="Left" Height="24" Margin="8,129,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
-        <Label Content="Correo" HorizontalAlignment="Left" Height="24" Margin="10,193,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Apellido" HorizontalAlignment="Left" Height="24" Margin="10,142,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Correo" HorizontalAlignment="Left" Height="24" Margin="10,194,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
         <TextBox x:Name="TXT_Mail"
             FontSize="13"
             FontWeight="Medium"
@@ -103,7 +105,7 @@
                     AlignmentX="Left"/>
             </TextBox.Background>
         </TextBox>
-        <Label Content="Teléfono" HorizontalAlignment="Left" Height="24" Margin="13,257,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Teléfono" HorizontalAlignment="Left" Height="24" Margin="10,257,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
         <TextBox x:Name="TXT_Password"
             FontSize="13"
             FontWeight="Medium"
@@ -122,7 +124,7 @@
                     AlignmentX="Left"/>
             </TextBox.Background>
         </TextBox>
-        <Label Content="Contraseña" HorizontalAlignment="Left" Height="24" Margin="12,316,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Height="24" Margin="10,323,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
         <Button x:Name="BTN_Save" Content="Guardar" HorizontalAlignment="Left" Height="30" Margin="30,441,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Save_Click"/>
         <DataGrid x:Name="LibrarianTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="178,58,10,52" >
             <DataGrid.Columns>
