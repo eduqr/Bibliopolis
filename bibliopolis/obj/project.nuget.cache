@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3RcVf76Cc1VoWNNSrK8lMtxU0EYFACfrVURLyv2moHDFXhfnLpTB3ozku2gVqC/OszkvsbIuDdU5QuO0utguyQ==",
+  "dgSpecHash": "QPVHD2wDe1khkt0z0ccHkjW8Bz/jvMnZ+3MpKJMwkFsSr1p6RcBWpXqHi716HGLnL12ftfgsnY6n17j0FeW0aw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\simpl\\Documents\\Proyectos NET\\bibliopolis\\bibliopolis.csproj",
+  "projectFilePath": "C:\\Users\\simpl\\OneDrive\\Escritorio\\projectBibliopolis\\bibliopolis\\bibliopolis.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\simpl\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\simpl\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",

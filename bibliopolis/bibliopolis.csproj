@@ -8,6 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\book.png" />
+    <None Remove="Images\bookstore.png" />
+    <None Remove="Images\key.png" />
+    <None Remove="Images\return.png" />
+    <None Remove="Images\upqroo_logo.png" />
+    <None Remove="Images\user.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -17,9 +26,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Views\" />
-    <Folder Include="Services\" />
+    <Resource Include="Images\book.png" />
+    <Resource Include="Images\bookstore.png" />
+    <Resource Include="Images\key.png" />
+    <Resource Include="Images\return.png" />
+    <Resource Include="Images\upqroo_logo.png" />
+    <Resource Include="Images\user.png" />
   </ItemGroup>
 
 </Project>

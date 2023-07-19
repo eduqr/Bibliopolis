@@ -7,7 +7,27 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\HomeMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ManageLibrarians.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SuperAdminMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\HomeMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ManageLibrarians.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SuperAdminMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

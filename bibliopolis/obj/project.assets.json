@@ -1801,11 +1801,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\simpl\\Documents\\Proyectos NET\\bibliopolis\\bibliopolis.csproj",
+      "projectUniqueName": "C:\\Users\\simpl\\OneDrive\\Escritorio\\projectBibliopolis\\bibliopolis\\bibliopolis.csproj",
       "projectName": "bibliopolis",
-      "projectPath": "C:\\Users\\simpl\\Documents\\Proyectos NET\\bibliopolis\\bibliopolis.csproj",
+      "projectPath": "C:\\Users\\simpl\\OneDrive\\Escritorio\\projectBibliopolis\\bibliopolis\\bibliopolis.csproj",
       "packagesPath": "C:\\Users\\simpl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\simpl\\Documents\\Proyectos NET\\bibliopolis\\obj\\",
+      "outputPath": "C:\\Users\\simpl\\OneDrive\\Escritorio\\projectBibliopolis\\bibliopolis\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
