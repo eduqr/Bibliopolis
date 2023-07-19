@@ -12,5 +12,9 @@ namespace bibliopolis.Validations
         {
             return obj == null;     // Retorna true si se cumple que obj sea null
         }
+        public static bool IsStringEmpty(string str)
+        {
+            return string.IsNullOrWhiteSpace(str); //Retorna true si hay un string vacío
+        }
     }
 }

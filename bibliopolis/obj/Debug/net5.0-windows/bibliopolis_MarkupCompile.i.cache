@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\simpl\OneDrive\Escritorio\projectBibliopolis\bibliopolis\obj\Debug\net5.0-windows\
+C:\Users\valde\GitHub\Bibliopolis\bibliopolis\obj\Debug\net5.0-windows\
 bibliopolis
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\simpl\OneDrive\Escritorio\projectBibliopolis\bibliopolis\App.xaml
+C:\Users\valde\GitHub\Bibliopolis\bibliopolis\App.xaml
 4-565296713
 
-17904800088
-2161909018536
+17545134995
+216-650101331
 MainWindow.xaml;Views\HomeMenu.xaml;Views\ManageLibrarians.xaml;Views\SuperAdminMenu.xaml;
 
 False

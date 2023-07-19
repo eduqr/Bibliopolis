@@ -1,4 +1,5 @@
 ﻿using bibliopolis.Services;
+using bibliopolis.Validations;
 using bibliopolis.Views;
 using Renci.SshNet.Messages;
 using System;
@@ -34,8 +35,22 @@ namespace bibliopolis
         {
             string mail = TXT_Mail.Text;
             string password = TXT_Password.Password;
-
+            
             var role = login.Login(mail, password);
+
+
+            if (InputValidator.IsObjectNull(role) && !InputValidator.IsStringEmpty(mail) && !InputValidator.IsStringEmpty(password))
+            {
+                MessageBox.Show("Credenciales incorrectas");
+                return;
+            }
+
+            if (InputValidator.IsObjectNull(role))
+            {
+                MessageBox.Show("Todos los campos son obligatorios");
+                return;
+            }
+          
 
             if (role.Roles.Name == "Super Admin")
             {
