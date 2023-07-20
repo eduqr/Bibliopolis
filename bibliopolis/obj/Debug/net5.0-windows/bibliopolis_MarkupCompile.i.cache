@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\valde\GitHub\Bibliopolis\bibliopolis\App.xaml
-4-565296713
+5-32380028
 
-17545134995
+20-357312764
 216-650101331
-MainWindow.xaml;Views\HomeMenu.xaml;Views\ManageLibrarians.xaml;Views\SuperAdminMenu.xaml;
+MainWindow.xaml;Views\HomeMenu.xaml;Views\ManageLibrarians.xaml;Views\ManageStudents.xaml;Views\SuperAdminMenu.xaml;
 
 False
 
