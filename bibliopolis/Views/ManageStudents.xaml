@@ -21,7 +21,10 @@
                              Height="28"
                              VerticalContentAlignment="Center"
                              Margin="7,52,648,454"
-                             Padding="20,0,0,0" >
+                             Padding="20,0,0,0" 
+                             
+                 >
+            
             <TextBox.Background>
                 <ImageBrush ImageSource="/Images/user.png"
                                         Stretch="None"
@@ -106,7 +109,7 @@
         </TextBox>
         <Label Content="Teléfono" HorizontalAlignment="Left" Height="24" Margin="2,261,0,0" VerticalAlignment="Top" Width="160" FontFamily="Segoe UI Semibold"/>
         <Button x:Name="BTN_Save" Content="Guardar" HorizontalAlignment="Left" Height="30" Margin="30,441,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Save_Click" />
-        <DataGrid x:Name="StudentTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="178,58,10,52" >
+        <DataGrid x:Name="StudentTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="178,58,10,52"  >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Matricula" Binding="{Binding Matricula}" />
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Name}" />
@@ -118,14 +121,14 @@
                 <DataGridTemplateColumn Header="Editar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Editar"  />
+                            <Button Content="Editar" Click="BTN_EditItem_Click" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Eliminar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Eliminar" Background="Yellow" />
+                            <Button Content="Eliminar" Background="Yellow" Click="BTN_Delete_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -139,11 +142,15 @@
             <ComboBoxItem Content="Ing. Software" />
             <ComboBoxItem Content="Ing. Financiera" />
             <ComboBoxItem Content="Ing. Biomédica" />
+            <ComboBoxItem Content="Ing. Biotecnología"/>
+            <ComboBoxItem Content="Lic. Terapia física"/>
+            <ComboBoxItem Content="Lic. Administración"/>
+            
         </ComboBox> 
        
         
-        <Button x:Name="BTN_GoBack" Content="Regresar" HorizontalAlignment="Left" Height="24" Margin="715,17,0,0" VerticalAlignment="Top" Width="61" />
-        <Button x:Name="BTN_Clear" Content="Limpiar" HorizontalAlignment="Left" Height="30" Margin="31,478,0,0" VerticalAlignment="Top" Width="108" />
+        <Button x:Name="BTN_GoBack" Content="Regresar" HorizontalAlignment="Left" Height="24" Margin="715,17,0,0" VerticalAlignment="Top" Width="61" Click="BTN_GoBack_Click" />
+        <Button x:Name="BTN_Clear" Content="Limpiar" HorizontalAlignment="Left" Height="30" Margin="31,478,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Clear_Click" />
 
     </Grid>
 </Window>

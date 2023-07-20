@@ -73,6 +73,28 @@ namespace bibliopolis.Services
                 throw new Exception("Sucedió un error (UpdateLibrarian)" + ex.Message);
             }
         }
+        public void DeleteStudent(string Matricula)
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    Student res = _context.Students.Find(Matricula);
+
+                    if (InputValidator.IsObjectNull(res))
+                    {
+                        MessageBox.Show("No se encontró el registro");
+                        return;
+                    }
+                    _context.Students.Remove(res);
+                    _context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Sucedió un error (DeleteLibrarian)" + ex.Message);
+            }
+        }
 
         public List<Student> GetStudents()
         {

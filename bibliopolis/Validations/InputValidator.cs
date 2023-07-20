@@ -16,5 +16,18 @@ namespace bibliopolis.Validations
         {
             return string.IsNullOrWhiteSpace(str); //Retorna true si hay un string vacío
         }
+
+        public static bool IsNumber(string srt)
+        {
+            foreach (char c in srt)
+            {
+                if (!Char.IsDigit(c))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
     }
 }

@@ -11,7 +11,7 @@ namespace bibliopolis.Entities
     public class Student
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)] //// Indicar que la clave no será generada automáticamente
+        [DatabaseGenerated(DatabaseGeneratedOption.None)] // Indicar que la clave no será generada automáticamente
         public string Matricula { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }

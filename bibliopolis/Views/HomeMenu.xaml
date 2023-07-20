@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="HomeMenu" Height="450" Width="800">
     <Grid>
-        <Label Content="Aquí las opcines de registro alumno, gestión de préstamo"></Label>
+        
         <Label Content="Aquí pueden ir las estadísticas de libros y todo eso" HorizontalAlignment="Left" Margin="284,0,0,0" VerticalAlignment="Center"/>
 
     </Grid>

@@ -1,5 +1,7 @@
 ﻿using bibliopolis.Entities;
 using bibliopolis.Services;
+using bibliopolis.Validations;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,11 +33,13 @@ namespace bibliopolis.Views
 
         private void BTN_Save_Click(object sender, RoutedEventArgs e)
         {
+
             try
             {
                 string possiblePk = TXT_Matricula.Text;
+                
 
-                if (int.TryParse(possiblePk, out int existPk))
+                if (!InputValidator.IsNumber(possiblePk))
                 {
                     Student student = new Student();
 
@@ -47,8 +51,8 @@ namespace bibliopolis.Views
                     student.Career = SelectCareer.Text;
 
                     services.AddStudent(student);
-
-                    GetStudentsTable();
+                    
+                       
                 }
                 else
                 {
@@ -65,6 +69,7 @@ namespace bibliopolis.Views
                 }
 
                 GetStudentsTable();
+                TXT_Matricula.IsEnabled = true;
             }
             catch (Exception ex)
             {
@@ -73,10 +78,56 @@ namespace bibliopolis.Views
             }
         }
 
+        private void BTN_EditItem_Click(object sender, EventArgs e)
+        {
+            Student student = new Student();
+
+            student = (sender as FrameworkElement).DataContext as Student;
+
+            TXT_Matricula.IsEnabled= false;
+
+            TXT_Matricula.Text = student.Matricula;
+            TXT_NameStudent.Text = student.Name.ToString();
+            TXT_LastnameStudent.Text = student.LastName.ToString();
+            TXT_MailStudent.Text = student.Mail.ToString();
+            TXT_PhoneNumberStudent.Text = student.PhoneNumber.ToString();
+            SelectCareer.Text = student.Career.ToString();
+
+        }
+
+        private void BTN_Delete_Click(object sender, EventArgs e)
+        {
+            Student student = new Student();
+
+            student = (sender as FrameworkElement).DataContext as Student;
+
+            string DeletePk = student.Matricula;
+            services.DeleteStudent(DeletePk);
+
+            GetStudentsTable();
+        }
 
         public void GetStudentsTable()
             {
                 StudentTable.ItemsSource = services.GetStudents();
             }
+
+        private void BTN_GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            SuperAdminMenu SuperAdminWindow = new SuperAdminMenu();
+            Close();
+            SuperAdminWindow.Show();
+        }
+
+        private void BTN_Clear_Click(object sender, RoutedEventArgs e)
+        {
+            TXT_Matricula.Clear();
+            TXT_NameStudent.Clear();
+            TXT_LastnameStudent.Clear();
+            TXT_MailStudent.Clear();
+            TXT_PhoneNumberStudent.Clear();
+            SelectCareer.SelectedIndex = -1;
+            TXT_Matricula.IsEnabled = true;
+        }
     }
 }
