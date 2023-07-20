@@ -3,7 +3,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace bibliopolis.Migrations
 {
-    public partial class example : Migration
+    public partial class ejemplo : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,6 +18,22 @@ namespace bibliopolis.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Roles", x => x.PkRole);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Students",
+                columns: table => new
+                {
+                    Matricula = table.Column<string>(type: "varchar(767)", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    LastName = table.Column<string>(type: "text", nullable: false),
+                    Career = table.Column<string>(type: "text", nullable: false),
+                    Mail = table.Column<string>(type: "text", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Students", x => x.Matricula);
                 });
 
             migrationBuilder.CreateTable(
@@ -54,6 +70,9 @@ namespace bibliopolis.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Librarians");
+
+            migrationBuilder.DropTable(
+                name: "Students");
 
             migrationBuilder.DropTable(
                 name: "Roles");

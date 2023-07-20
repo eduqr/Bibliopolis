@@ -67,6 +67,36 @@ namespace bibliopolis.Migrations
                     b.ToTable("Roles");
                 });
 
+            modelBuilder.Entity("bibliopolis.Entities.Student", b =>
+                {
+                    b.Property<string>("Matricula")
+                        .HasColumnType("varchar(767)");
+
+                    b.Property<string>("Career")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Mail")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Matricula");
+
+                    b.ToTable("Students");
+                });
+
             modelBuilder.Entity("bibliopolis.Entities.Librarian", b =>
                 {
                     b.HasOne("bibliopolis.Entities.Role", "Roles")

@@ -24,8 +24,8 @@
             </Border.BorderBrush>
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                    <GradientStop Color="#7F8C8D " Offset="0"/>
-                    <GradientStop Color="#3498DB" Offset="1"/>
+                    <GradientStop Color="#c88d0b " Offset="0"/>
+                    <GradientStop Color="#fc7729" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
             <Grid>
@@ -133,13 +133,14 @@
                             FontSize="15"
                             FontFamily="Montserrat"
                             Cursor="Hand"
+                            
                             Click="BTN_Login_Click">
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
-                                <Setter Property="Background" Value="#2E86C1"/>
+                                <Setter Property="Background" Value="#a43502"/>
                                 <Style.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#28AEED"/>
+                                        <Setter Property="Background" Value="#a43502"/>
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>

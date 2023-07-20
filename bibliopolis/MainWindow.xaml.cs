@@ -52,7 +52,7 @@ namespace bibliopolis
             }
           
 
-            if (role.Roles.Name == "Super Admin")
+            if (role.Roles.Name == "SuperAdmin")
             {
                 SuperAdminMenu superAdminMenu = new SuperAdminMenu();
                 Close();

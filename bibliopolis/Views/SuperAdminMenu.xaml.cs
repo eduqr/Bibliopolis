@@ -30,5 +30,13 @@ namespace bibliopolis.Views
             Close();
             manageWindow.Show();
         }
+
+        private void BTN_ManageStudents_Click(object sender, RoutedEventArgs e)
+        {
+            ManageStudents managestudents = new ManageStudents();
+            Close();
+            managestudents.Show();
+
+        }
     }
 }
