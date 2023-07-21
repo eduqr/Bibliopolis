@@ -70,7 +70,7 @@ namespace bibliopolis.Services
             }
             catch (Exception ex)
             {
-                throw new Exception("Sucedió un error (UpdateLibrarian)" + ex.Message);
+                throw new Exception("Sucedió un error (UpdateStudent)" + ex.Message);
             }
         }
         public void DeleteStudent(string Matricula)

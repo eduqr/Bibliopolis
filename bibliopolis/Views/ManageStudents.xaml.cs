@@ -129,5 +129,19 @@ namespace bibliopolis.Views
             SelectCareer.SelectedIndex = -1;
             TXT_Matricula.IsEnabled = true;
         }
+
+        private void NumericTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            
+                // Verificar si el contenido es numérico
+                if (!int.TryParse(TXT_Matricula.Text, out _))
+                {
+                    MessageBox.Show("Por favor, ingrese solo números.");
+                    TXT_Matricula.Focus();
+                }
+            
+        }
+
+   
     }
 }
