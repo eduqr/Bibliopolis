@@ -9,6 +9,7 @@
     <Grid>
         
         <Label Content="Aquí pueden ir las estadísticas de libros y todo eso" HorizontalAlignment="Left" Margin="284,0,0,0" VerticalAlignment="Center"/>
+        <Button x:Name="BTN_ManageStudent" Content="Gestionar Alumnos" HorizontalAlignment="Left" Height="56" Margin="132,73,0,0" VerticalAlignment="Top" Width="138" Click="BTN_ManageStudent_Click"/>
 
     </Grid>
 </Window>

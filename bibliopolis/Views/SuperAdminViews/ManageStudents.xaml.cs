@@ -30,42 +30,44 @@ namespace bibliopolis.Views
             InitializeComponent();
             GetStudentsTable();
         }
-
+        private bool isEditMode = false;
         private void BTN_Save_Click(object sender, RoutedEventArgs e)
         {
-
             try
             {
-                string possiblePk = TXT_Matricula.Text;
-                
-
-                if (!InputValidator.IsNumber(possiblePk))
+                if (!InputValidator.IsNumber(TXT_Matricula.Text) || !InputValidator.IsNumber(TXT_PhoneNumberStudent.Text))
                 {
-                    Student student = new Student();
+                    MessageBox.Show("Por favor, asegúrese de que la matrícula y el número sean valores numéricos.");
+                    return;
+                }
 
-                    student.Matricula = TXT_Matricula.Text;
-                    student.Name = TXT_NameStudent.Text;
-                    student.LastName = TXT_LastnameStudent.Text;
-                    student.Mail = TXT_MailStudent.Text;
-                    student.PhoneNumber = TXT_PhoneNumberStudent.Text;
-                    student.Career = SelectCareer.Text;
+                // Verificar si la dirección de correo electrónico contiene el símbolo "@"
+                if (!InputValidator.IsValidEmail(TXT_MailStudent.Text))
+                {
+                    MessageBox.Show("Por favor, ingrese una dirección de correo electrónico válida.");
+                    return;
+                }
 
-                    services.AddStudent(student);
-                    
-                       
+                Student student = new Student();
+                student.Matricula = TXT_Matricula.Text;
+                student.Name = TXT_NameStudent.Text;
+                student.LastName = TXT_LastnameStudent.Text;
+                student.Mail = TXT_MailStudent.Text;
+                student.PhoneNumber = TXT_PhoneNumberStudent.Text;
+                student.Career = SelectCareer.Text;
+
+                if (isEditMode)
+                {
+                    services.UpdateStudent(student);
+                    MessageBox.Show("Estudiante editado correctamente");
+                    isEditMode = false; // Restablecer la bandera después de guardar los cambios en modo de edición
                 }
                 else
                 {
-                    Student student = new Student();
-
-                    student.Matricula = TXT_Matricula.Text;
-                    student.Name = TXT_NameStudent.Text;
-                    student.LastName = TXT_LastnameStudent.Text;
-                    student.Mail = TXT_MailStudent.Text;
-                    student.PhoneNumber = TXT_PhoneNumberStudent.Text;
-                    student.Career = SelectCareer.Text;
-
-                    services.UpdateStudent(student);
+                    if (InputValidator.IsNumber(TXT_Matricula.Text))
+                    {
+                        services.AddStudent(student);
+                    }
                 }
 
                 GetStudentsTable();
@@ -73,10 +75,10 @@ namespace bibliopolis.Views
             }
             catch (Exception ex)
             {
-               
                 MessageBox.Show($"Error al guardar el estudiante: {ex.Message}");
             }
         }
+
 
         private void BTN_EditItem_Click(object sender, EventArgs e)
         {
@@ -84,14 +86,16 @@ namespace bibliopolis.Views
 
             student = (sender as FrameworkElement).DataContext as Student;
 
-            TXT_Matricula.IsEnabled= false;
-
+            
             TXT_Matricula.Text = student.Matricula;
-            TXT_NameStudent.Text = student.Name.ToString();
-            TXT_LastnameStudent.Text = student.LastName.ToString();
-            TXT_MailStudent.Text = student.Mail.ToString();
-            TXT_PhoneNumberStudent.Text = student.PhoneNumber.ToString();
-            SelectCareer.Text = student.Career.ToString();
+            TXT_Matricula.IsEnabled = false; // Deshabilitar el TextBox para que no se pueda editar la matrícula
+            TXT_NameStudent.Text = student.Name;
+            TXT_LastnameStudent.Text = student.LastName;
+            TXT_MailStudent.Text = student.Mail;
+            TXT_PhoneNumberStudent.Text = student.PhoneNumber;
+            SelectCareer.Text = student.Career;
+
+            isEditMode = true; // Establecer la bandera en modo de edición
 
         }
 
@@ -130,18 +134,8 @@ namespace bibliopolis.Views
             TXT_Matricula.IsEnabled = true;
         }
 
-        private void NumericTextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            
-                // Verificar si el contenido es numérico
-                if (!int.TryParse(TXT_Matricula.Text, out _))
-                {
-                    MessageBox.Show("Por favor, ingrese solo números.");
-                    TXT_Matricula.Focus();
-                }
-            
-        }
+        
 
-   
+       
     }
 }

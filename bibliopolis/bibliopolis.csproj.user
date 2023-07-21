@@ -7,16 +7,19 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\HomeMenu.xaml.cs">
+    <Compile Update="Views\LibrariansViews\HomeMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\ManageLibrarians.xaml.cs">
+    <Compile Update="Views\LibrariansViews\Students.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\ManageStudents.xaml.cs">
+    <Compile Update="Views\SuperAdminViews\ManageLibrarians.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\SuperAdminMenu.xaml.cs">
+    <Compile Update="Views\SuperAdminViews\ManageStudents.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SuperAdminViews\SuperAdminMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -24,16 +27,19 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\HomeMenu.xaml">
+    <Page Update="Views\LibrariansViews\HomeMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\ManageLibrarians.xaml">
+    <Page Update="Views\LibrariansViews\Students.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\ManageStudents.xaml">
+    <Page Update="Views\SuperAdminViews\ManageLibrarians.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\SuperAdminMenu.xaml">
+    <Page Update="Views\SuperAdminViews\ManageStudents.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SuperAdminViews\SuperAdminMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

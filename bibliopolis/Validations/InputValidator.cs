@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows;
 
 namespace bibliopolis.Validations
 {
@@ -17,16 +19,25 @@ namespace bibliopolis.Validations
             return string.IsNullOrWhiteSpace(str); //Retorna true si hay un string vacío
         }
 
-        public static bool IsNumber(string srt)
+        public static bool IsNumber(string text)
         {
-            foreach (char c in srt)
+            return int.TryParse(text, out _); //Convierte un string a numero
+        }
+
+        public static bool ValidateNumericTextBox(TextBox textBox)
+        {
+            if (!int.TryParse(textBox.Text, out _))
             {
-                if (!Char.IsDigit(c))
-                {
-                    return false;
-                }
+                
+                textBox.Text = string.Empty;
+                textBox.Focus();
+                return false;
             }
             return true;
+        }
+        public static bool IsValidEmail(string email)
+        {
+            return email.Contains("@"); //Valida que el correo contenga "@"
         }
 
     }

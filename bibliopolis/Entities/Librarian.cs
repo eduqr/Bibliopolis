@@ -18,6 +18,7 @@ namespace bibliopolis.Entities
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
         
+
         [ForeignKey("Roles")]
         public int FkRole { get; set; }
         public Role Roles { get; set; }

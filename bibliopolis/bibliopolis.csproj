@@ -34,8 +34,4 @@
     <Resource Include="Images\user.png" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\V\" />
-  </ItemGroup>
-
 </Project>
