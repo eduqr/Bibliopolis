@@ -29,6 +29,8 @@ namespace bibliopolis
         {
             InitializeComponent();
             login.GenerateSuperAdmin();
+            // Suscribirse al evento PreviewKeyDown del control de contraseña (TXT_Password)
+            TXT_Password.PreviewKeyDown += TXT_Password_PreviewKeyDown;
         }
 
         public void BTN_Login_Click(object sender, RoutedEventArgs e)
@@ -60,6 +62,7 @@ namespace bibliopolis
             }
             else if (role.Roles.Name == "Bibliotecario")
             {
+                
                 HomeMenu home = new HomeMenu();
                 Close();
                 home.Show();
@@ -69,5 +72,16 @@ namespace bibliopolis
                 MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+        private void TXT_Password_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            // Verificar si se presionó la tecla "Enter"
+            if (e.Key == Key.Enter)
+            {
+                // Ejecutar el código del botón de login (BTN_Login_Click)
+                BTN_Login_Click(sender, e);
+            }
+        }
+        
     }
+    
 }

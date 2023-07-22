@@ -1,15 +1,16 @@
-﻿<Window x:Class="bibliopolis.Views.ManageStudents"
+﻿<Window x:Class="bibliopolis.Views.ManageLibrarians"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bibliopolis.Views"
         mc:Ignorable="d"
-        Title="ManageStudents" Height="550" Width="800">
-    <Grid>
-        <Label Content="Matricula" HorizontalAlignment="Left" Height="24" Margin="2,28,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
+        Title="Gestionar bibliotecarios" Height="580" Width="800">
+   
+    <Grid >
+        <Label Content="ID Bibliotecario" HorizontalAlignment="Left" Height="24" Margin="2,28,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
 
-        <TextBox x:Name="TXT_Matricula"
+        <TextBox x:Name="TXT_PkLibrarian"
                              
                              FontSize="13"
                              FontWeight="Medium"
@@ -20,15 +21,15 @@
                              BorderThickness="0,0,0,2"
                              Height="28"
                              VerticalContentAlignment="Center"
-                             Margin="7,52,648,454"
-                             Padding="20,0,0,0" >
+                             Margin="11,41,644,464"
+                             Padding="20,0,0,0" IsEnabled="False">
             <TextBox.Background>
                 <ImageBrush ImageSource="/Images/user.png"
                                         Stretch="None"
                                         AlignmentX="Left"/>
             </TextBox.Background>
         </TextBox>
-        <TextBox x:Name="TXT_NameStudent"           
+        <TextBox x:Name="TXT_Name"           
             FontSize="13"
             FontWeight="Medium"
             FontFamily="Montserrat"                            
@@ -38,7 +39,7 @@
             BorderThickness="0,0,0,2"
             Height="28"
             VerticalContentAlignment="Center"
-            Margin="2,109,653,397"
+            Margin="11,97,644,408"
             Padding="20,0,0,0">
             <TextBox.Background>
                 <ImageBrush ImageSource="/Images/user.png"
@@ -47,7 +48,7 @@
             </TextBox.Background>
         </TextBox>
         <Label Content="Nombre" HorizontalAlignment="Left" Height="24" Margin="2,85,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
-        <TextBox x:Name="TXT_LastnameStudent"
+        <TextBox x:Name="TXT_Lastname"
             FontSize="13"
             FontWeight="Medium"
             FontFamily="Montserrat"                            
@@ -57,18 +58,18 @@
             BorderThickness="0,0,0,2"
             Height="28"
             VerticalContentAlignment="Center"
-            Margin="0,168,655,338"
+            Margin="15,155,640,350"
             Padding="20,0,0,0">
-
+            
             <TextBox.Background>
                 <ImageBrush ImageSource="/Images/user.png"
                     Stretch="None"
                     AlignmentX="Left"/>
             </TextBox.Background>
         </TextBox>
-        <Label Content="Apellido" HorizontalAlignment="Left" Height="24" Margin="2,142,0,0" VerticalAlignment="Top" Width="156" FontFamily="Segoe UI Semibold"/>
-        <Label Content="Correo" HorizontalAlignment="Left" Height="24" Margin="2,196,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
-        <TextBox x:Name="TXT_MailStudent"
+        <Label Content="Apellido" HorizontalAlignment="Left" Height="24" Margin="10,142,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Correo" HorizontalAlignment="Left" Height="24" Margin="10,194,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
+        <TextBox x:Name="TXT_Mail"
             FontSize="13"
             FontWeight="Medium"
             FontFamily="Montserrat"                            
@@ -78,7 +79,7 @@
             BorderThickness="0,0,0,2"
             Height="28"
             VerticalContentAlignment="Center"
-            Margin="0,225,655,281"
+            Margin="16,218,639,287"
             Padding="20,0,0,0">
             <TextBox.Background>
                 <ImageBrush ImageSource="/Images/user.png"
@@ -86,7 +87,7 @@
                     AlignmentX="Left"/>
             </TextBox.Background>
         </TextBox>
-        <TextBox x:Name="TXT_PhoneNumberStudent"
+        <TextBox x:Name="TXT_PhoneNumber"
             FontSize="13"
             FontWeight="Medium"
             FontFamily="Montserrat"                            
@@ -96,7 +97,7 @@
             BorderThickness="0,0,0,2"
             Height="28"
             VerticalContentAlignment="Center"
-            Margin="0,285,655,221"
+            Margin="13,279,642,226"
             Padding="20,0,0,0">
             <TextBox.Background>
                 <ImageBrush ImageSource="/Images/user.png"
@@ -104,28 +105,47 @@
                     AlignmentX="Left"/>
             </TextBox.Background>
         </TextBox>
-        <Label Content="Teléfono" HorizontalAlignment="Left" Height="24" Margin="2,261,0,0" VerticalAlignment="Top" Width="160" FontFamily="Segoe UI Semibold"/>
-        <Button x:Name="BTN_Save" Content="Guardar" HorizontalAlignment="Left" Height="30" Margin="30,441,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Save_Click" />
-        <DataGrid x:Name="StudentTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="178,58,10,52" >
+        <Label Content="Teléfono" HorizontalAlignment="Left" Height="24" Margin="10,257,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
+        <TextBox x:Name="TXT_Password"
+            FontSize="13"
+            FontWeight="Medium"
+            FontFamily="Montserrat"                            
+            Foreground="Black"
+            CaretBrush="White"
+            BorderBrush="Black"
+            BorderThickness="0,0,0,2"
+            Height="28"
+            VerticalContentAlignment="Center"
+            Margin="17,341,638,164"
+            Padding="20,0,0,0">
+            <TextBox.Background>
+                <ImageBrush ImageSource="/Images/user.png"
+                    Stretch="None"
+                    AlignmentX="Left"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Height="24" Margin="10,323,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
+        <Button x:Name="BTN_Save" Content="Guardar" HorizontalAlignment="Left" Height="30" Margin="30,441,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Save_Click"/>
+        <DataGrid x:Name="LibrarianTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="178,58,10,52" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Matricula" Binding="{Binding Matricula}" />
+                <DataGridTextColumn Header="Id" Binding="{Binding PkLibrarian}" />
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Apellido" Binding="{Binding LastName}" />
+                <DataGridTextColumn Header="Apellido" Binding="{Binding Lastname}" />
                 <DataGridTextColumn Header="Correo" Binding="{Binding Mail}" />
                 <DataGridTextColumn Header="Telefono" Binding="{Binding PhoneNumber}" />
-                <DataGridTextColumn Header="Carrera" Binding="{Binding Career}" />
+                <DataGridTextColumn Header="Rol" Binding="{Binding Roles.Name}" />
 
                 <DataGridTemplateColumn Header="Editar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Editar"  />
+                            <Button Content="Editar" Click="BTN_EditItem_Click" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Eliminar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Eliminar" Background="Yellow" />
+                            <Button Content="Eliminar" Background="Yellow" Click="BTN_Delete_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -134,16 +154,13 @@
 
 
         </DataGrid>
-        <Label Content="Carrera" HorizontalAlignment="Left" Height="27" Margin="22,331,0,0" VerticalAlignment="Top" Width="113" FontFamily="Segoe UI Semibold" HorizontalContentAlignment="Center" FontSize="16"/>
-        <ComboBox x:Name="SelectCareer"  HorizontalAlignment="Left" Margin="33,363,0,0" VerticalAlignment="Top" Width="102" >
-            <ComboBoxItem Content="Ing. Software" />
-            <ComboBoxItem Content="Ing. Financiera" />
-            <ComboBoxItem Content="Ing. Biomédica" />
-        </ComboBox> 
-       
-        
-        <Button x:Name="BTN_GoBack" Content="Regresar" HorizontalAlignment="Left" Height="24" Margin="715,17,0,0" VerticalAlignment="Top" Width="61" />
-        <Button x:Name="BTN_Clear" Content="Limpiar" HorizontalAlignment="Left" Height="30" Margin="31,478,0,0" VerticalAlignment="Top" Width="108" />
+        <Label Content="Rol" HorizontalAlignment="Left" Height="27" Margin="25,380,0,0" VerticalAlignment="Top" Width="113" FontFamily="Segoe UI Semibold" HorizontalContentAlignment="Center" FontSize="16"/>
+        <ComboBox x:Name="SelectRol"  HorizontalAlignment="Left" Margin="30,412,0,0" VerticalAlignment="Top" Width="102"/>
+        <Button x:Name="BTN_GoBack" Content="Regresar" HorizontalAlignment="Left" Height="24" Margin="715,17,0,0" VerticalAlignment="Top" Width="61" Click="BTN_GoBack_Click"/>
+        <Button x:Name="BTN_Clear" Content="Limpiar" HorizontalAlignment="Left" Height="30" Margin="31,478,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Clear_Click"/>
+
+
+
 
     </Grid>
 </Window>

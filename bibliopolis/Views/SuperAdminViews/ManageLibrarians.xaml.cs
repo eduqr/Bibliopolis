@@ -1,5 +1,6 @@
 ﻿using bibliopolis.Entities;
 using bibliopolis.Services;
+using bibliopolis.Validations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,7 @@ namespace bibliopolis.Views
         private void BTN_Save_Click(object sender, RoutedEventArgs e)
         {
             string possiblePk = TXT_PkLibrarian.Text;
+            
 
             if (!int.TryParse(possiblePk, out int existPk))
             {

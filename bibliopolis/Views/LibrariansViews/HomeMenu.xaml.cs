@@ -1,4 +1,5 @@
-﻿using System;
+﻿using bibliopolis.Views.LibrariansViews;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,17 @@ namespace bibliopolis.Views
     /// </summary>
     public partial class HomeMenu : Window
     {
+
         public HomeMenu()
         {
             InitializeComponent();
+        }
+
+        private void BTN_ManageStudent_Click(object sender, RoutedEventArgs e)
+        {
+            Students students = new Students();
+            Close();
+            students.Show();
         }
     }
 }

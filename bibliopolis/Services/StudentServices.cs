@@ -1,6 +1,7 @@
 ﻿using bibliopolis.Context;
 using bibliopolis.Entities;
 using bibliopolis.Validations;
+using bibliopolis.Views.LibrariansViews;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,12 @@ namespace bibliopolis.Services
 
                 using (var _context = new ApplicationDbContext())
                 {
+                    if (_context.Students.Any(x => x.Matricula == request.Matricula))
+                    {
+                        MessageBox.Show("Ya existe un estudiante con esta matrícula.");
+                        return;
+                    }
+
                     Student res = new Student();
 
                     res.Matricula=request.Matricula;
@@ -70,7 +77,29 @@ namespace bibliopolis.Services
             }
             catch (Exception ex)
             {
-                throw new Exception("Sucedió un error (UpdateLibrarian)" + ex.Message);
+                throw new Exception("Sucedió un error (UpdateStudent)" + ex.Message);
+            }
+        }
+        public void DeleteStudent(string Matricula)
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    Student res = _context.Students.Find(Matricula);
+
+                    if (InputValidator.IsObjectNull(res))
+                    {
+                        MessageBox.Show("No se encontró el registro");
+                        return;
+                    }
+                    _context.Students.Remove(res);
+                    _context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Sucedió un error (DeleteLibrarian)" + ex.Message);
             }
         }
 
@@ -80,6 +109,7 @@ namespace bibliopolis.Services
             {
                 using (var _context = new ApplicationDbContext())
                 {
+                   
                     List<Student> students = _context.Students.ToList();
 
                     if (students.Count > 0)
@@ -94,5 +124,10 @@ namespace bibliopolis.Services
                 throw new Exception("Sucedió un error (GetStudents)" + ex.Message);
             }
         }
+
+
+        
+
+
     }
 }
