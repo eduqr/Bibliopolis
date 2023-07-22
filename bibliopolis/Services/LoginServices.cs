@@ -43,6 +43,44 @@ namespace bibliopolis.Services
             }
         }
 
+        public void GenerateRoles()
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    bool superAdminRoleExists = _context.Roles.Any(role => role.Name == "Super Admin");
+                    bool librarianExists = _context.Roles.Any(role => role.Name == "Bibliotecario");
+
+                    if (!superAdminRoleExists)
+                    {
+                        var superAdminRole = new Role
+                        {
+                            Name = "Super Admin"
+                        };
+
+                        _context.Roles.Add(superAdminRole);
+                        _context.SaveChanges();
+                    }
+
+                    if (!librarianExists)
+                    {
+                        var bibliotecarioRole = new Role
+                        {
+                            Name = "Bibliotecario"
+                        };
+
+                        _context.Roles.Add(bibliotecarioRole);
+                        _context.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Sucedió un error (GenerateRoles) " + ex.Message);
+            }
+        }
+
         public Librarian Login(string mail, string password)
         {
             try

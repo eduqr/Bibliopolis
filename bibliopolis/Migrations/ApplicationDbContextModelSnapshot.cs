@@ -69,7 +69,7 @@ namespace bibliopolis.Migrations
 
             modelBuilder.Entity("bibliopolis.Entities.Student", b =>
                 {
-                    b.Property<string>("Matricula")
+                    b.Property<string>("RegistrationNumber")
                         .HasColumnType("varchar(767)");
 
                     b.Property<string>("Career")
@@ -92,7 +92,7 @@ namespace bibliopolis.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("Matricula");
+                    b.HasKey("RegistrationNumber");
 
                     b.ToTable("Students");
                 });

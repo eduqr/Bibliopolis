@@ -8,8 +8,8 @@ using bibliopolis.Context;
 namespace bibliopolis.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230720053922_ejemplo")]
-    partial class ejemplo
+    [Migration("20230722031907_Example")]
+    partial class Example
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -71,7 +71,7 @@ namespace bibliopolis.Migrations
 
             modelBuilder.Entity("bibliopolis.Entities.Student", b =>
                 {
-                    b.Property<string>("Matricula")
+                    b.Property<string>("RegistrationNumber")
                         .HasColumnType("varchar(767)");
 
                     b.Property<string>("Career")
@@ -94,7 +94,7 @@ namespace bibliopolis.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("Matricula");
+                    b.HasKey("RegistrationNumber");
 
                     b.ToTable("Students");
                 });

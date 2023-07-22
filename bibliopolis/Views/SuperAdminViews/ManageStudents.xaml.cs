@@ -25,17 +25,20 @@ namespace bibliopolis.Views
     public partial class ManageStudents : Window
     {
         StudentServices services = new StudentServices();
+        
         public ManageStudents()
         {
             InitializeComponent();
             GetStudentsTable();
         }
+        
         private bool isEditMode = false;
+        
         private void BTN_Save_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                if (!InputValidator.IsNumber(TXT_Matricula.Text) || !InputValidator.IsNumber(TXT_PhoneNumberStudent.Text))
+                if (!InputValidator.IsNumber(TXT_RegistrationNumber.Text) || !InputValidator.IsNumber(TXT_PhoneNumberStudent.Text))
                 {
                     MessageBox.Show("Por favor, asegúrese de que la matrícula y el número sean valores numéricos.");
                     return;
@@ -49,7 +52,7 @@ namespace bibliopolis.Views
                 }
 
                 Student student = new Student();
-                student.Matricula = TXT_Matricula.Text;
+                student.RegistrationNumber = TXT_RegistrationNumber.Text;
                 student.Name = TXT_NameStudent.Text;
                 student.LastName = TXT_LastnameStudent.Text;
                 student.Mail = TXT_MailStudent.Text;
@@ -64,21 +67,20 @@ namespace bibliopolis.Views
                 }
                 else
                 {
-                    if (InputValidator.IsNumber(TXT_Matricula.Text))
+                    if (InputValidator.IsNumber(TXT_RegistrationNumber.Text))
                     {
                         services.AddStudent(student);
                     }
                 }
 
                 GetStudentsTable();
-                TXT_Matricula.IsEnabled = true;
+                TXT_RegistrationNumber.IsEnabled = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al guardar el estudiante: {ex.Message}");
             }
         }
-
 
         private void BTN_EditItem_Click(object sender, EventArgs e)
         {
@@ -87,8 +89,8 @@ namespace bibliopolis.Views
             student = (sender as FrameworkElement).DataContext as Student;
 
             
-            TXT_Matricula.Text = student.Matricula;
-            TXT_Matricula.IsEnabled = false; // Deshabilitar el TextBox para que no se pueda editar la matrícula
+            TXT_RegistrationNumber.Text = student.RegistrationNumber;
+            TXT_RegistrationNumber.IsEnabled = false; // Deshabilitar el TextBox para que no se pueda editar la matrícula
             TXT_NameStudent.Text = student.Name;
             TXT_LastnameStudent.Text = student.LastName;
             TXT_MailStudent.Text = student.Mail;
@@ -96,7 +98,6 @@ namespace bibliopolis.Views
             SelectCareer.Text = student.Career;
 
             isEditMode = true; // Establecer la bandera en modo de edición
-
         }
 
         private void BTN_Delete_Click(object sender, EventArgs e)
@@ -105,16 +106,16 @@ namespace bibliopolis.Views
 
             student = (sender as FrameworkElement).DataContext as Student;
 
-            string DeletePk = student.Matricula;
+            string DeletePk = student.RegistrationNumber;
             services.DeleteStudent(DeletePk);
 
             GetStudentsTable();
         }
 
         public void GetStudentsTable()
-            {
+        {
                 StudentTable.ItemsSource = services.GetStudents();
-            }
+        }
 
         private void BTN_GoBack_Click(object sender, RoutedEventArgs e)
         {
@@ -125,17 +126,13 @@ namespace bibliopolis.Views
 
         private void BTN_Clear_Click(object sender, RoutedEventArgs e)
         {
-            TXT_Matricula.Clear();
+            TXT_RegistrationNumber.Clear();
             TXT_NameStudent.Clear();
             TXT_LastnameStudent.Clear();
             TXT_MailStudent.Clear();
             TXT_PhoneNumberStudent.Clear();
             SelectCareer.SelectedIndex = -1;
-            TXT_Matricula.IsEnabled = true;
+            TXT_RegistrationNumber.IsEnabled = true;
         }
-
-        
-
-       
     }
 }

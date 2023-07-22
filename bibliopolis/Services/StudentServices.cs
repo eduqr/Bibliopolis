@@ -26,7 +26,7 @@ namespace bibliopolis.Services
 
                 using (var _context = new ApplicationDbContext())
                 {
-                    if (_context.Students.Any(x => x.Matricula == request.Matricula))
+                    if (_context.Students.Any(x => x.RegistrationNumber == request.RegistrationNumber))
                     {
                         MessageBox.Show("Ya existe un estudiante con esta matrícula.");
                         return;
@@ -34,7 +34,7 @@ namespace bibliopolis.Services
 
                     Student res = new Student();
 
-                    res.Matricula=request.Matricula;
+                    res.RegistrationNumber=request.RegistrationNumber;
                     res.Name = request.Name;
                     res.LastName = request.LastName;
                     res.Mail = request.Mail;
@@ -50,6 +50,7 @@ namespace bibliopolis.Services
                 throw new Exception("Sucedió un error (AddStudent)" + ex.Message);
             }
         }
+
         public void UpdateStudent(Student request)
         {
             try
@@ -63,7 +64,7 @@ namespace bibliopolis.Services
                 using (var _context = new ApplicationDbContext())
                 {
                     Student res = new Student();
-                    res = _context.Students.Find(request.Matricula);
+                    res = _context.Students.Find(request.RegistrationNumber);
 
                     res.Name = request.Name;
                     res.LastName= request.LastName;
@@ -80,13 +81,14 @@ namespace bibliopolis.Services
                 throw new Exception("Sucedió un error (UpdateStudent)" + ex.Message);
             }
         }
-        public void DeleteStudent(string Matricula)
+
+        public void DeleteStudent(string RegistrationNumber)
         {
             try
             {
                 using (var _context = new ApplicationDbContext())
                 {
-                    Student res = _context.Students.Find(Matricula);
+                    Student res = _context.Students.Find(RegistrationNumber);
 
                     if (InputValidator.IsObjectNull(res))
                     {
@@ -124,10 +126,5 @@ namespace bibliopolis.Services
                 throw new Exception("Sucedió un error (GetStudents)" + ex.Message);
             }
         }
-
-
-        
-
-
     }
 }
