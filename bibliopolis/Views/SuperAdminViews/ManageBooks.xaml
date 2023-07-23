@@ -1,0 +1,41 @@
+﻿<Window x:Class="bibliopolis.Views.SuperAdminViews.ManageBooks"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:bibliopolis.Views.SuperAdminViews"
+        mc:Ignorable="d"
+        Title="ManageBooks" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="TxtISBN" 
+                 HorizontalAlignment="Left"
+                 Margin="33,35,0,0"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="120"/>
+
+        <TextBox x:Name="TxtTitle" 
+            HorizontalAlignment="Left"
+            Margin="33,93,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top" Width="120"/>
+
+        <TextBox x:Name="TxtAuthor" 
+            HorizontalAlignment="Left"
+            Margin="33,154,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top" Width="120"/>
+
+        <TextBox x:Name="TxtUnits" 
+            HorizontalAlignment="Left"
+            Margin="33,217,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top" Width="120"/>
+
+        <Label Content="ISBN" HorizontalAlignment="Left" Height="24" Margin="33,58,0,0" VerticalAlignment="Top" Width="71" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Título" HorizontalAlignment="Left" Height="24" Margin="33,116,0,0" VerticalAlignment="Top" Width="71" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Autor" HorizontalAlignment="Left" Height="24" Margin="33,177,0,0" VerticalAlignment="Top" Width="71" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Existencias" HorizontalAlignment="Left" Height="24" Margin="33,240,0,0" VerticalAlignment="Top" Width="71" FontFamily="Segoe UI Semibold"/>
+        <DataGrid  Margin="211,44,27,110"/>
+
+    </Grid>
+</Window>

@@ -10,8 +10,8 @@ namespace bibliopolis.Entities
 {
     public class Student
     {
-        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]   // Primary key no será auto incrementable
+        [Key] 
         public string RegistrationNumber { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
