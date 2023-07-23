@@ -6,10 +6,172 @@
         xmlns:local="clr-namespace:bibliopolis.Views"
         mc:Ignorable="d"
         Title="HomeMenu" Height="450" Width="800">
-    <Grid>
-        
-        <Label Content="Aquí pueden ir las estadísticas de libros y todo eso" HorizontalAlignment="Left" Margin="284,0,0,0" VerticalAlignment="Center"/>
-        <Button x:Name="BTN_ManageStudent" Content="Gestionar Alumnos" HorizontalAlignment="Left" Height="56" Margin="132,73,0,0" VerticalAlignment="Top" Width="138" Click="BTN_ManageStudent_Click"/>
 
+    <Window.Resources>
+        <Style x:Key="MainButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="10.5"/>
+            <Setter Property="Margin" Value="7.5"/>
+            <Setter Property="MinWidth" Value="180"/>
+            <Setter Property="MinHeight" Value="70"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Offset="0.1" Color="#CEB5B7"/>
+                        <!-- Naranja -->
+                        <GradientStop Offset="0.8" Color="#CCC9E7"/>
+                        <!-- Café -->
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBorder" Background="{TemplateBinding Background}"
+                            CornerRadius="10" SnapsToDevicePixels="True">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Efecto al pasar el mouse -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Offset="0" Color="#CCC9E7"/>
+                                            <GradientStop Offset="1" Color="#8E6596"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <!-- Efecto al hacer clic -->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Offset="0" Color="#8E6596"/>
+                                            <GradientStop Offset="1" Color="#6B4E71"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="AccountButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="MinWidth" Value="38"/>
+            <Setter Property="MinHeight" Value="38"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Offset="0.1" Color="#CCC9E7"/>
+                        <!-- Naranja -->
+                        <GradientStop Offset="0.8" Color="#CCC9E7"/>
+                        <!-- Café -->
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBorder" Background="{TemplateBinding Background}"
+                            CornerRadius="10" SnapsToDevicePixels="True">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Efecto al pasar el mouse -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Offset="0" Color="#CCC9E7"/>
+                                            <GradientStop Offset="1" Color="#8E6596"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <!-- Efecto al hacer clic -->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Offset="0" Color="#8E6596"/>
+                                            <GradientStop Offset="1" Color="#6B4E71"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="WelcomeLabelStyle" TargetType="Label">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="Foreground" Value="#6B4E71"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Background" Value="#F5EFED"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Label">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            CornerRadius="10" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Button x:Name="BTN_ReturnToLogin" HorizontalAlignment="Left" Margin="20,24,0,0" VerticalAlignment="Top" Height="38" Width="38" Style="{StaticResource AccountButtonStyle}" Click="BTN_ReturnToLogin_Click">
+            <Image Source="/Images/enter.png" Height="25" Width="25"/>
+        </Button>
+
+        <Label x:Name="LBL_WelcomeMessage" Content="Bienvenido, Eduardo" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Margin="68,23,0,0" Width="190" Height="40"/>
+
+        <!--<Button x:Name="BTN_ManageStudent" Content="Gestionar Alumnos" HorizontalAlignment="Center" Height="56" Margin="0,323,0,0" VerticalAlignment="Top" Width="138" Click="BTN_ManageStudent_Click"/>-->
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0">
+            <Button x:Name="btnAgregar" Content="Agregar préstamo" Style="{StaticResource MainButtonStyle}"/>
+            <Button Content="Gestionar préstamo" Style="{StaticResource MainButtonStyle}"/>
+            <Button Content="Catálogo de libros" Style="{StaticResource MainButtonStyle}"/>
+            <Button Content="Ayuda" Style="{StaticResource MainButtonStyle}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,330,0,0">
+            <Label x:Name="L" Content="204 Libros registrados" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Width="240" Height="60" Margin="10" Padding="10"/>
+            <Label x:Name="L_Copy" Content="14 préstamos actuales" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Width="240" Height="60" Margin="10" Padding="10"/>
+            <Label x:Name="L_Copy3" Content="3 préstamos por vencer hoy" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Width="240" Height="60" Margin="10" Padding="10"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,100,0,213" Width="700">
+            <Image Source="/Images/open-book.png" Height="80" Width="80" Stretch="UniformToFill" Margin="17,0,0,0"/>
+            <Image Source="/Images/search-book.png" Height="80" Width="80" Stretch="UniformToFill" Margin="125,10,0,0"/>
+            <Image Source="/Images/stack-books.png" Height="80" Width="80" Stretch="UniformToFill" Margin="110,0,0,0"/>
+            <Image Source="/Images/guide.png" Height="80" Width="80" Stretch="UniformToFill" Margin="115,10,0,0"/>
+        </StackPanel>
     </Grid>
 </Window>

@@ -33,21 +33,7 @@
                     <RowDefinition Height="30"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="5"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Acceso"
-                               Foreground="White"
-                               FontSize="10"
-                               FontFamily="Montserrat"
-                               Grid.Column="0"
-                               VerticalAlignment="Center"
-                               Margin="10,0,0,0"/>
-                </Grid>
+
                 <StackPanel Width="220"
                             Grid.Row="1"
                             Orientation="Vertical"
@@ -71,7 +57,7 @@
                            Width="200" Height="82" RenderTransformOrigin="0.5,0.5">
                         </Image>
                     </Border>
-                    
+
                     <TextBlock Text="Correo"
                                Foreground="White"
                                FontSize="12"
@@ -133,7 +119,6 @@
                             FontSize="15"
                             FontFamily="Montserrat"
                             Cursor="Hand"
-                            
                             Click="BTN_Login_Click">
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
@@ -156,7 +141,8 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                </StackPanel>
+                    </StackPanel>
+                <Label Foreground="White" FontSize="12" FontWeight="Light" FontFamily="Montserrat" Content="Versión 0.4.1" HorizontalAlignment="Left" Height="25" Margin="10,360,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80"/>
             </Grid>
         </Border>
     </Border>
