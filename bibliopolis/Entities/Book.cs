@@ -12,7 +12,7 @@ namespace bibliopolis.Entities
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key] 
-        public long ISBN { get; set; }
+        public string ISBN { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
         public string Editorial { get; set; }

@@ -16,6 +16,31 @@ namespace bibliopolis.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
+            modelBuilder.Entity("bibliopolis.Entities.Book", b =>
+                {
+                    b.Property<string>("ISBN")
+                        .HasColumnType("varchar(767)");
+
+                    b.Property<string>("Author")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Editorial")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Units")
+                        .HasColumnType("int");
+
+                    b.HasKey("ISBN");
+
+                    b.ToTable("Books");
+                });
+
             modelBuilder.Entity("bibliopolis.Entities.Librarian", b =>
                 {
                     b.Property<int>("PkLibrarian")

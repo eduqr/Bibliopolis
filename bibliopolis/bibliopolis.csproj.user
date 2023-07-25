@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\LibrariansViews\BookCatalog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\LibrariansViews\HomeMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +31,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LibrariansViews\BookCatalog.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\LibrariansViews\HomeMenu.xaml">

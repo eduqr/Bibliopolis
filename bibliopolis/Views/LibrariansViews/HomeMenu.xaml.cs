@@ -34,6 +34,13 @@ namespace bibliopolis.Views
             main.Show();
         }
 
+        private void BTN_ShowCatalog_Click(object sender, RoutedEventArgs e)
+        {
+            // Catálogo debe ser flotante
+            BookCatalog catalog = new BookCatalog();
+            catalog.Show();
+        }
+
         //private void BTN_ManageStudent_Click(object sender, RoutedEventArgs e)
         //{
         //    Students students = new Students();

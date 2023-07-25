@@ -11,6 +11,7 @@
         <Label Content="tendría la opción de gestionar bibliotecario, ver la lista de libros y alumnos y gestionar biblioteca (este lo llevará a HomeMenu)" HorizontalAlignment="Left" Margin="36,139,0,0" VerticalAlignment="Top"/>
         <Button x:Name="BTN_ManageLibrarians" Content="Gestionar bibliotecarios" HorizontalAlignment="Left" Height="39" Margin="157,248,0,0" VerticalAlignment="Top" Width="145" Click="BTN_ManageLibrarians_Click"/>
         <Button x:Name="BTN_ManageStudents" Content="Gestionar alumnos" HorizontalAlignment="Left" Height="39" Margin="350,248,0,0" VerticalAlignment="Top" Width="152" Click="BTN_ManageStudents_Click"/>
-
+        <Button x:Name="BTN_ManageBooks" Content="Gestionar libros" HorizontalAlignment="Left" Height="39" Margin="563,248,0,0" VerticalAlignment="Top" Width="152" Click="BTN_ManageBooks_Click"/>
+        <Button x:Name="BTN_ReturnToLogin" Content="Cerrar sesión" HorizontalAlignment="Left" Height="39" Margin="36,31,0,0" VerticalAlignment="Top" Width="152" Click="BTN_ReturnToLogin_Click"/>
     </Grid>
 </Window>

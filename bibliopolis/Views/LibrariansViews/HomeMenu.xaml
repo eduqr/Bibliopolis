@@ -155,10 +155,10 @@
         <!--<Button x:Name="BTN_ManageStudent" Content="Gestionar Alumnos" HorizontalAlignment="Center" Height="56" Margin="0,323,0,0" VerticalAlignment="Top" Width="138" Click="BTN_ManageStudent_Click"/>-->
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0">
-            <Button x:Name="btnAgregar" Content="Agregar préstamo" Style="{StaticResource MainButtonStyle}"/>
-            <Button Content="Gestionar préstamo" Style="{StaticResource MainButtonStyle}"/>
-            <Button Content="Catálogo de libros" Style="{StaticResource MainButtonStyle}"/>
-            <Button Content="Ayuda" Style="{StaticResource MainButtonStyle}"/>
+            <Button x:Name="BTN_AddLending" Content="Agregar préstamo" Style="{StaticResource MainButtonStyle}"/>
+            <Button x:Name="BTN_LendingRequest" Content="Gestionar préstamo" Style="{StaticResource MainButtonStyle}"/>
+            <Button x:Name="BTN_ShowCatalog" Content="Catálogo de libros" Style="{StaticResource MainButtonStyle}" Click="BTN_ShowCatalog_Click"/>
+            <Button x:Name="BTN_Help" Content="Ayuda" Style="{StaticResource MainButtonStyle}"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,330,0,0">

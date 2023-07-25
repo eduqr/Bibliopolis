@@ -1,0 +1,34 @@
+﻿<Window x:Class="bibliopolis.Views.LibrariansViews.BookCatalog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:bibliopolis.Views.LibrariansViews"
+        mc:Ignorable="d"
+        Title="BookCatalog" Height="450" Width="800">
+    <Grid>
+
+
+        <DataGrid  x:Name="DataGridBooks" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" Margin="54,51,54,19">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ISBN" Binding="{Binding ISBN}" />
+                <DataGridTextColumn Header="Título" Binding="{Binding Title}" />
+                <DataGridTextColumn Header="Autor" Binding="{Binding Author}" />
+                <DataGridTextColumn Header="Editorial" Binding="{Binding Editorial}" />
+                <DataGridTextColumn Header="Unidades" Binding="{Binding Units}" />
+
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Copiar ISBN" Click="BTN_CopyItem_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="BTN_GoBack" Content="Regresar" HorizontalAlignment="Left" Height="24" Margin="715,17,0,0" VerticalAlignment="Top" Width="61" Click="BTN_GoBack_Click" />
+
+    </Grid>
+</Window>

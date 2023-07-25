@@ -6,36 +6,114 @@
         xmlns:local="clr-namespace:bibliopolis.Views.SuperAdminViews"
         mc:Ignorable="d"
         Title="ManageBooks" Height="450" Width="800">
+
     <Grid>
         <TextBox x:Name="TxtISBN" 
+                 MaxLength="13"
                  HorizontalAlignment="Left"
-                 Margin="33,35,0,0"
-                 TextWrapping="Wrap"
-                 VerticalAlignment="Top" Width="120"/>
+                 Margin="33,87,0,0"
+                 FontSize="13"
+                 FontWeight="Medium"
+                 FontFamily="Montserrat"                            
+                 Foreground="Black"
+                 CaretBrush="White"
+                 BorderBrush="Black"
+                 BorderThickness="0,0,0,2"
+                 VerticalAlignment="Top"
+                 Width="120"/>
 
         <TextBox x:Name="TxtTitle" 
-            HorizontalAlignment="Left"
-            Margin="33,93,0,0"
-            TextWrapping="Wrap"
-            VerticalAlignment="Top" Width="120"/>
+                 HorizontalAlignment="Left"
+                 Margin="33,145,0,0"
+                 FontSize="13"
+                 FontWeight="Medium"
+                 FontFamily="Montserrat"                            
+                 Foreground="Black"
+                 CaretBrush="White"
+                 BorderBrush="Black"
+                 BorderThickness="0,0,0,2"
+                 VerticalAlignment="Top"
+                 Width="120"/>
 
         <TextBox x:Name="TxtAuthor" 
-            HorizontalAlignment="Left"
-            Margin="33,154,0,0"
-            TextWrapping="Wrap"
-            VerticalAlignment="Top" Width="120"/>
+                 HorizontalAlignment="Left"
+                 Margin="33,206,0,0"
+                 FontSize="13"
+                 FontWeight="Medium"
+                 FontFamily="Montserrat"                            
+                 Foreground="Black"
+                 CaretBrush="White"
+                 BorderBrush="Black"
+                 BorderThickness="0,0,0,2"
+                 VerticalAlignment="Top"
+                 Width="120"/>
+
+        <TextBox x:Name="TxtEditorial" 
+                 HorizontalAlignment="Left"
+                 Margin="33,269,0,0"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 FontSize="13"
+                 FontWeight="Medium"
+                 FontFamily="Montserrat"                            
+                 Foreground="Black"
+                 CaretBrush="White"
+                 BorderBrush="Black"
+                 BorderThickness="0,0,0,2"
+                 Width="120"/>
 
         <TextBox x:Name="TxtUnits" 
-            HorizontalAlignment="Left"
-            Margin="33,217,0,0"
-            TextWrapping="Wrap"
-            VerticalAlignment="Top" Width="120"/>
+                 HorizontalAlignment="Left"
+                 Margin="33,342,0,0"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 FontSize="13"
+                 FontWeight="Medium"
+                 FontFamily="Montserrat"                            
+                 Foreground="Black"
+                 CaretBrush="White"
+                 BorderBrush="Black"
+                 BorderThickness="0,0,0,2"
+                 Width="120"/>
 
         <Label Content="ISBN" HorizontalAlignment="Left" Height="24" Margin="33,58,0,0" VerticalAlignment="Top" Width="71" FontFamily="Segoe UI Semibold"/>
         <Label Content="Título" HorizontalAlignment="Left" Height="24" Margin="33,116,0,0" VerticalAlignment="Top" Width="71" FontFamily="Segoe UI Semibold"/>
         <Label Content="Autor" HorizontalAlignment="Left" Height="24" Margin="33,177,0,0" VerticalAlignment="Top" Width="71" FontFamily="Segoe UI Semibold"/>
-        <Label Content="Existencias" HorizontalAlignment="Left" Height="24" Margin="33,240,0,0" VerticalAlignment="Top" Width="71" FontFamily="Segoe UI Semibold"/>
-        <DataGrid  Margin="211,44,27,110"/>
+        <Label Content="Editorial" HorizontalAlignment="Left" Height="24" Margin="33,240,0,0" VerticalAlignment="Top" Width="71" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Existencias" HorizontalAlignment="Left" Height="24" Margin="33,313,0,0" VerticalAlignment="Top" Width="71" FontFamily="Segoe UI Semibold"/>
+
+        <DataGrid  x:Name="DataGridBooks" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" Margin="214,77,24,77">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ISBN" Binding="{Binding ISBN}" />
+                <DataGridTextColumn Header="Título" Binding="{Binding Title}" />
+                <DataGridTextColumn Header="Autor" Binding="{Binding Author}" />
+                <DataGridTextColumn Header="Editorial" Binding="{Binding Editorial}" />
+                <DataGridTextColumn Header="Unidades" Binding="{Binding Units}" />
+
+                <DataGridTemplateColumn Header="Editar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Editar" Click="BTN_EditItem_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Eliminar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Eliminar" Background="Yellow" Click="BTN_Delete_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+        <Button x:Name="BTN_Save" Content="Guardar" HorizontalAlignment="Left" Height="30" Margin="33,378,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Save_Click" />
+        <Button x:Name="BTN_Clear" Content="Limpiar" HorizontalAlignment="Left" Height="30" Margin="171,378,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Clear_Click" />
+        <Button x:Name="BTN_GoBack" Content="Regresar" HorizontalAlignment="Left" Height="24" Margin="715,17,0,0" VerticalAlignment="Top" Width="61" Click="BTN_GoBack_Click" />
 
     </Grid>
+    
 </Window>
