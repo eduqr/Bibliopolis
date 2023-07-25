@@ -1795,24 +1795,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\simpl\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\domin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\simpl\\OneDrive\\Escritorio\\projectBibliopolis\\bibliopolis\\bibliopolis.csproj",
+      "projectUniqueName": "C:\\Users\\domin\\OneDrive\\Documentos\\GitHub\\Bibliopolis\\bibliopolis\\bibliopolis.csproj",
       "projectName": "bibliopolis",
-      "projectPath": "C:\\Users\\simpl\\OneDrive\\Escritorio\\projectBibliopolis\\bibliopolis\\bibliopolis.csproj",
-      "packagesPath": "C:\\Users\\simpl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\simpl\\OneDrive\\Escritorio\\projectBibliopolis\\bibliopolis\\obj\\",
+      "projectPath": "C:\\Users\\domin\\OneDrive\\Documentos\\GitHub\\Bibliopolis\\bibliopolis\\bibliopolis.csproj",
+      "packagesPath": "C:\\Users\\domin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\domin\\OneDrive\\Documentos\\GitHub\\Bibliopolis\\bibliopolis\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\simpl\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\domin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1872,7 +1867,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
