@@ -41,6 +41,13 @@ namespace bibliopolis.Views
             catalog.Show();
         }
 
+        private void BTN_AddLending_Click(object sender, RoutedEventArgs e)
+        {
+            LoanForm form = new LoanForm();
+            Close();
+            form.Show();
+        }
+
         //private void BTN_ManageStudent_Click(object sender, RoutedEventArgs e)
         //{
         //    Students students = new Students();

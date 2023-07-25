@@ -13,6 +13,9 @@
     <Compile Update="Views\LibrariansViews\HomeMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\LibrariansViews\LoanForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\LibrariansViews\Students.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,6 +40,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\LibrariansViews\HomeMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LibrariansViews\LoanForm.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\LibrariansViews\Students.xaml">
