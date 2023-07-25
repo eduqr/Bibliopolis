@@ -6,6 +6,158 @@
         xmlns:local="clr-namespace:bibliopolis.Views.SuperAdminViews"
         mc:Ignorable="d"
         Title="ManageBooks" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="MainButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="10.5"/>
+            <Setter Property="Margin" Value="7.5"/>
+            <Setter Property="MinWidth" Value="108"/>
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Offset="0.1" Color="#CEB5B7"/>
+                        <!-- Naranja -->
+                        <GradientStop Offset="0.8" Color="#CCC9E7"/>
+                        <!-- Café -->
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBorder" Background="{TemplateBinding Background}"
+                            CornerRadius="10" SnapsToDevicePixels="True">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Efecto al pasar el mouse -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Offset="0" Color="#CCC9E7"/>
+                                            <GradientStop Offset="1" Color="#8E6596"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <!-- Efecto al hacer clic -->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Offset="0" Color="#8E6596"/>
+                                            <GradientStop Offset="1" Color="#6B4E71"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="AccountButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="MinWidth" Value="38"/>
+            <Setter Property="MinHeight" Value="38"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Offset="0.1" Color="#CCC9E7"/>
+                        <!-- Naranja -->
+                        <GradientStop Offset="0.8" Color="#CCC9E7"/>
+                        <!-- Café -->
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBorder" Background="{TemplateBinding Background}"
+                            CornerRadius="10" SnapsToDevicePixels="True">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Efecto al pasar el mouse -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Offset="0" Color="#CCC9E7"/>
+                                            <GradientStop Offset="1" Color="#8E6596"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <!-- Efecto al hacer clic -->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Offset="0" Color="#8E6596"/>
+                                            <GradientStop Offset="1" Color="#6B4E71"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="WelcomeLabelStyle" TargetType="Label">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="Foreground" Value="#6B4E71"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Background" Value="#F5EFED"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Label">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            CornerRadius="10" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CustomDataGridStyle" TargetType="{x:Type DataGrid}">
+            <Setter Property="Background" Value="#FFFFDFDF" />
+            <!-- Color naranja claro de fondo -->
+            <Setter Property="BorderBrush" Value="#FFC" />
+            <!-- Color del borde -->
+            <Setter Property="BorderThickness" Value="1" />
+            <!-- Grosor del borde -->
+
+            <!-- Radio de los bordes redondeados -->
+            <Setter Property="Padding" Value="5" />
+            <!-- Espaciado interno -->
+            <Setter Property="RowHeaderWidth" Value="0" />
+            <!-- Oculta la columna de encabezados de fila -->
+            <!-- Otros ajustes visuales que desees aplicar -->
+        </Style>
+    </Window.Resources>
 
     <Grid>
         <TextBox x:Name="TxtISBN" 
@@ -82,7 +234,7 @@
         <Label Content="Editorial" HorizontalAlignment="Left" Height="24" Margin="33,240,0,0" VerticalAlignment="Top" Width="71" FontFamily="Segoe UI Semibold"/>
         <Label Content="Existencias" HorizontalAlignment="Left" Height="24" Margin="33,313,0,0" VerticalAlignment="Top" Width="71" FontFamily="Segoe UI Semibold"/>
 
-        <DataGrid  x:Name="DataGridBooks" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" Margin="214,77,24,77">
+        <DataGrid  x:Name="DataGridBooks" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" Margin="214,77,24,77" Style="{StaticResource CustomDataGridStyle}">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ISBN" Binding="{Binding ISBN}" />
@@ -110,9 +262,9 @@
 
         </DataGrid>
 
-        <Button x:Name="BTN_Save" Content="Guardar" HorizontalAlignment="Left" Height="30" Margin="33,378,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Save_Click" />
-        <Button x:Name="BTN_Clear" Content="Limpiar" HorizontalAlignment="Left" Height="30" Margin="171,378,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Clear_Click" />
-        <Button x:Name="BTN_GoBack" Content="Regresar" HorizontalAlignment="Left" Height="24" Margin="715,17,0,0" VerticalAlignment="Top" Width="61" Click="BTN_GoBack_Click" />
+        <Button x:Name="BTN_Save" Content="Guardar" HorizontalAlignment="Left" Height="30" Margin="33,378,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Save_Click" Style="{StaticResource MainButtonStyle}" />
+        <Button x:Name="BTN_Clear" Content="Limpiar" HorizontalAlignment="Left" Height="30" Margin="171,378,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Clear_Click" Style="{StaticResource MainButtonStyle}" />
+        <Button x:Name="BTN_GoBack" Content="Regresar" HorizontalAlignment="Left" Height="24" Margin="663,17,0,0" VerticalAlignment="Top" Width="61" Click="BTN_GoBack_Click" Style="{StaticResource MainButtonStyle}" />
 
     </Grid>
     
