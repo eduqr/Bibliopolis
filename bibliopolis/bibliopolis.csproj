@@ -17,6 +17,7 @@
     <None Remove="Images\key.png" />
     <None Remove="Images\miniuser.png" />
     <None Remove="Images\open-book.png" />
+    <None Remove="Images\proceso.png" />
     <None Remove="Images\return.png" />
     <None Remove="Images\search-book.png" />
     <None Remove="Images\stack-books.png" />
@@ -42,6 +43,7 @@
     <Resource Include="Images\guide.png" />
     <Resource Include="Images\key.png" />
     <Resource Include="Images\open-book.png" />
+    <Resource Include="Images\proceso.png" />
     <Resource Include="Images\return.png" />
     <Resource Include="Images\miniuser.png" />
     <Resource Include="Images\search-book.png" />

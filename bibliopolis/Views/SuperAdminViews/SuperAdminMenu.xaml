@@ -146,7 +146,7 @@
     <Grid Background="#FFFFDFDF">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="120,188,0,125" Width="639">
             <Image Source="/Images/bibliotecario.png" Height="80" Width="80" Stretch="UniformToFill" Margin="17,0,0,0"/>
-            <Image Source="/Images/proceso.png" Height="80" Width="80" Stretch="UniformToFill" Margin="165,10,0,0"/>
+            <Image Source="/Images/proceso.png" Height="80" Width="80" Stretch="UniformToFill" Margin="160,0,0,0"/>
             <Image Source="/Images/stack-books.png" Height="80" Width="80" Stretch="UniformToFill" Margin="140,0,0,0"/>
         </StackPanel>
         <Button x:Name="BTN_ReturnToLogin" HorizontalAlignment="Left" Margin="20,24,0,0" VerticalAlignment="Top" Height="38" Width="38" Style="{StaticResource AccountButtonStyle}" Click="BTN_ReturnToLogin_Click">

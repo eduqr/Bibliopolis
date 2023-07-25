@@ -38,9 +38,7 @@ namespace bibliopolis.Views.LibrariansViews
 
         private void BTN_GoBack_Click(object sender, RoutedEventArgs e)
         {
-            HomeMenu HomeMenu = new HomeMenu();
-            Close();
-            HomeMenu.Show();
+            Close();   
         }
 
         private void BTN_CopyItem_Click(object sender, RoutedEventArgs e)
