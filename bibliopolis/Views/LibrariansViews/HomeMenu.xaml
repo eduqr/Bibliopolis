@@ -150,7 +150,7 @@
             <Image Source="/Images/enter.png" Height="25" Width="25"/>
         </Button>
 
-        <Label x:Name="LBL_WelcomeMessage" Content="Bienvenido, Eduardo" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Margin="68,23,0,0" Width="190" Height="40"/>
+        <Label x:Name="LBL_WelcomeMessage" Content="Bienvenido, Bibliotecario" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Margin="68,23,0,0" Width="201" Height="40"/>
 
         <!--<Button x:Name="BTN_ManageStudent" Content="Gestionar Alumnos" HorizontalAlignment="Center" Height="56" Margin="0,323,0,0" VerticalAlignment="Top" Width="138" Click="BTN_ManageStudent_Click"/>-->
 
@@ -162,9 +162,9 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,330,0,0">
-            <Label x:Name="L" Content="204 Libros registrados" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Width="240" Height="60" Margin="10" Padding="10"/>
-            <Label x:Name="L_Copy" Content="14 préstamos actuales" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Width="240" Height="60" Margin="10" Padding="10"/>
-            <Label x:Name="L_Copy3" Content="3 préstamos por vencer hoy" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Width="240" Height="60" Margin="10" Padding="10"/>
+            <Label x:Name="L" Content="5 Libros registrados" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Width="240" Height="60" Margin="10" Padding="10"/>
+            <Label x:Name="L_Copy" Content="3 préstamos actuales" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Width="240" Height="60" Margin="10" Padding="10"/>
+            <Label x:Name="L_Copy3" Content="0 préstamos por vencer hoy" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Width="240" Height="60" Margin="10" Padding="10"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,100,0,213" Width="700">

@@ -16,5 +16,5 @@ C:\Users\valde\GitHub\Bibliopolis\bibliopolis\App.xaml
 216-650101331
 MainWindow.xaml;UserControls\LoanControl.xaml;Views\LibrariansViews\BookCatalog.xaml;Views\LibrariansViews\EditStatusWindow.xaml;Views\LibrariansViews\HelpMenu.xaml;Views\LibrariansViews\HomeMenu.xaml;Views\LibrariansViews\LoanForm.xaml;Views\LibrariansViews\ManageLoan.xaml;Views\SuperAdminViews\ManageBooks.xaml;Views\SuperAdminViews\ManageLibrarians.xaml;Views\SuperAdminViews\ManageStudents.xaml;Views\SuperAdminViews\SuperAdminMenu.xaml;
 
-False
+True
 

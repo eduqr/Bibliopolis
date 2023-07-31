@@ -46,16 +46,6 @@ namespace bibliopolis.Validations
             }
             return false;
         }
-        public static bool AreAllFieldsFilled(params string[] fields)
-        {
-            foreach (string field in fields)
-            {
-                if (string.IsNullOrWhiteSpace(field))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
+        
     }
 }
