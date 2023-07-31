@@ -22,7 +22,12 @@ namespace bibliopolis.Validations
 
         public static bool IsNumber(string text)
         {
-            return int.TryParse(text, out _);   // Retorna true si text es un número
+            foreach (char c in text)
+            {
+                if (!char.IsDigit(c))
+                    return false;
+            }
+            return true;
         }
 
         public static bool IsValidEmail(string email)
@@ -40,6 +45,17 @@ namespace bibliopolis.Validations
                 }
             }
             return false;
+        }
+        public static bool AreAllFieldsFilled(params string[] fields)
+        {
+            foreach (string field in fields)
+            {
+                if (string.IsNullOrWhiteSpace(field))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

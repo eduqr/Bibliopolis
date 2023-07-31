@@ -38,6 +38,12 @@ namespace bibliopolis.Views
         {
             try
             {
+                if (!InputValidator.AreAllFieldsFilled(TXT_RegistrationNumber.Text, TXT_NameStudent.Text, TXT_LastnameStudent.Text, TXT_MailStudent.Text, TXT_PhoneNumberStudent.Text, SelectCareer.Text))
+                {
+                    MessageBox.Show("Por favor, complete todos los campos antes de agregar un alumno.");
+                    return;
+                }
+
                 if (!InputValidator.IsNumber(TXT_RegistrationNumber.Text) || !InputValidator.IsNumber(TXT_PhoneNumberStudent.Text))
                 {
                     MessageBox.Show("Por favor, asegúrese de que la matrícula y el número sean valores numéricos.");

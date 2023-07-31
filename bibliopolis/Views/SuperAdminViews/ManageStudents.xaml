@@ -20,9 +20,9 @@
             <Setter Property="Background">
                 <Setter.Value>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Offset="0.1" Color="#CEB5B7"/>
+                        <GradientStop Offset="0.1" Color="#FF7230"/>
                         <!-- Naranja -->
-                        <GradientStop Offset="0.8" Color="#CCC9E7"/>
+                        <GradientStop Offset="0.8" Color="#FF7230"/>
                         <!-- Café -->
                     </LinearGradientBrush>
                 </Setter.Value>
@@ -40,8 +40,8 @@
                                 <Setter TargetName="ButtonBorder" Property="Background">
                                     <Setter.Value>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                            <GradientStop Offset="0" Color="#CCC9E7"/>
-                                            <GradientStop Offset="1" Color="#8E6596"/>
+                                            <GradientStop Offset="0" Color="#a43502 "/>
+                                            <GradientStop Offset="1" Color="#a43502 "/>
                                         </LinearGradientBrush>
                                     </Setter.Value>
                                 </Setter>
@@ -51,8 +51,8 @@
                                 <Setter TargetName="ButtonBorder" Property="Background">
                                     <Setter.Value>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                            <GradientStop Offset="0" Color="#8E6596"/>
-                                            <GradientStop Offset="1" Color="#6B4E71"/>
+                                            <GradientStop Offset="0" Color="#a43502 "/>
+                                            <GradientStop Offset="1" Color="#a43502 "/>
                                         </LinearGradientBrush>
                                     </Setter.Value>
                                 </Setter>
@@ -61,6 +61,24 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+        </Style>
+
+        <Style x:Key="ColoredDataGridStyle" TargetType="DataGrid">
+            <!-- Personaliza aquí los colores que desees -->
+            <Setter Property="Background" Value="#FFCEB7"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="RowBackground" Value="#FFCEB7"/>
+            <Setter Property="AlternatingRowBackground" Value="LightGray"/>
+            <Setter Property="BorderBrush" Value="White" />
+            <!-- Agrega más setters para personalizar otros aspectos del DataGrid -->
+        </Style>
+
+        <Style x:Key="CustomDataGridHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#FF8E30 "/>
+            <!-- Personaliza aquí el color de fondo del encabezado -->
+            <Setter Property="Foreground" Value="White"/>
+            <!-- Personaliza aquí el color del texto del encabezado -->
+            <Setter Property="BorderBrush" Value="#FF8E30" />
         </Style>
 
         <Style x:Key="AccountButtonStyle" TargetType="Button">
@@ -78,7 +96,7 @@
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                         <GradientStop Offset="0.1" Color="#CCC9E7"/>
                         <!-- Naranja -->
-                        <GradientStop Offset="0.8" Color="#CCC9E7"/>
+                        <GradientStop Offset="0.8" Color="#CCC"/>
                         <!-- Café -->
                     </LinearGradientBrush>
                 </Setter.Value>
@@ -96,8 +114,8 @@
                                 <Setter TargetName="ButtonBorder" Property="Background">
                                     <Setter.Value>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                            <GradientStop Offset="0" Color="#CCC9E7"/>
-                                            <GradientStop Offset="1" Color="#8E6596"/>
+                                            <GradientStop Offset="0" Color="#a43502 "/>
+                                            <GradientStop Offset="1" Color="#a43502 "/>
                                         </LinearGradientBrush>
                                     </Setter.Value>
                                 </Setter>
@@ -107,8 +125,8 @@
                                 <Setter TargetName="ButtonBorder" Property="Background">
                                     <Setter.Value>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                            <GradientStop Offset="0" Color="#8E6596"/>
-                                            <GradientStop Offset="1" Color="#6B4E71"/>
+                                            <GradientStop Offset="0" Color="#a43502 "/>
+                                            <GradientStop Offset="1" Color="#a43502 "/>
                                         </LinearGradientBrush>
                                     </Setter.Value>
                                 </Setter>
@@ -149,7 +167,7 @@
             <!-- Color del borde -->
             <Setter Property="BorderThickness" Value="1" />
             <!-- Grosor del borde -->
-            
+
             <!-- Radio de los bordes redondeados -->
             <Setter Property="Padding" Value="5" />
             <!-- Espaciado interno -->
@@ -177,7 +195,7 @@
                              Padding="20,0,0,0" 
                              
                  >
-            
+
             <TextBox.Background>
                 <ImageBrush ImageSource="/Images/user.png"
                                         Stretch="None"
@@ -264,8 +282,10 @@
         </TextBox>
         <Label Content="Teléfono" HorizontalAlignment="Left" Height="24" Margin="2,261,0,0" VerticalAlignment="Top" Width="160" FontFamily="Segoe UI Semibold"/>
         <Button x:Name="BTN_Save" Content="Guardar" HorizontalAlignment="Left" Height="30" Margin="30,441,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Save_Click" Style="{StaticResource MainButtonStyle}"/>
-        <DataGrid x:Name="StudentTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="178,58,10,52"  Style="{StaticResource CustomDataGridStyle}" >
-            <DataGrid.Columns>
+
+        <DataGrid x:Name="StudentTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="178,57,12,52"  Style="{StaticResource ColoredDataGridStyle}" ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
+
+            <DataGrid.Columns >
                 <DataGridTextColumn Header="Matricula" Binding="{Binding RegistrationNumber}" />
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Name}" />
                 <DataGridTextColumn Header="Apellido" Binding="{Binding LastName}" />
@@ -276,14 +296,14 @@
                 <DataGridTemplateColumn Header="Editar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Editar" Click="BTN_EditItem_Click" />
+                            <Button Content="Editar" Background="#C98E71" Foreground="White"  Click="BTN_EditItem_Click" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Eliminar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Eliminar" Background="Yellow" Click="BTN_Delete_Click"/>
+                            <Button Content="Eliminar" Background="#CA6536" Foreground="White" Click="BTN_Delete_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -292,15 +312,15 @@
 
 
         </DataGrid>
-        <Label Content="Carrera" HorizontalAlignment="Left" Height="27" Margin="22,331,0,0" VerticalAlignment="Top" Width="113" FontFamily="Segoe UI Semibold" HorizontalContentAlignment="Center" FontSize="16"/>
-        <ComboBox x:Name="SelectCareer"  HorizontalAlignment="Left" Margin="33,363,0,0" VerticalAlignment="Top" Width="102" >
+        <Label Content="Carrera" HorizontalAlignment="Left" Height="27" Margin="31,357,0,0" VerticalAlignment="Top" Width="113" FontFamily="Segoe UI Semibold" HorizontalContentAlignment="Center" FontSize="16"/>
+        <ComboBox x:Name="SelectCareer"  HorizontalAlignment="Left" Margin="36,389,0,0" VerticalAlignment="Top" Width="102" >
             <ComboBoxItem Content="Ing. Software" />
             <ComboBoxItem Content="Ing. Financiera" />
             <ComboBoxItem Content="Ing. Biomédica" />
             <ComboBoxItem Content="Ing. Biotecnología"/>
             <ComboBoxItem Content="Lic. Terapia física"/>
             <ComboBoxItem Content="Lic. Administración"/>
-            
+
         </ComboBox>
 
 
