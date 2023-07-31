@@ -1,0 +1,15 @@
+﻿<Window x:Class="bibliopolis.Views.LibrariansViews.EditStatusWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:bibliopolis.Views.LibrariansViews"
+        mc:Ignorable="d"
+        Title="EditStatusWindow" Height="140" Width="300">
+    <StackPanel Margin="10">
+        <RadioButton Content="Activo" IsChecked="{Binding IsActivo}" />
+        <RadioButton Content="Vencido" IsChecked="{Binding IsVencido}" />
+        <RadioButton Content="Devuelto" IsChecked="{Binding IsDevuelto}" />
+        <Button Content="Aceptar" Click="BtnAceptar_Click" Margin="0,10,0,0" />
+    </StackPanel>
+</Window>

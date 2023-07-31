@@ -1,0 +1,40 @@
+﻿<Window x:Class="bibliopolis.Views.LibrariansViews.ManageLoan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:bibliopolis.Views.LibrariansViews"
+        mc:Ignorable="d"
+        Title="ManageLoan" Height="300" Width="800">
+    <Grid>
+        <DataGrid x:Name="LoansTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="10,60,10,20">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding PkLoan}" />
+                <DataGridTextColumn Header="´Matrícula" Binding="{Binding RegistrationNumber}" />
+                <DataGridTextColumn Header="ISBN" Binding="{Binding ISBN}" />
+                <DataGridTextColumn Header="Fecha préstamo" Binding="{Binding LoanDate, StringFormat='{}{0:dd/MM/yyyy}'}" />
+                <DataGridTextColumn Header="Fecha devolución" Binding="{Binding DueDate, StringFormat='{}{0:dd/MM/yyyy}'}" />
+                <DataGridTextColumn Header="Estado" Binding="{Binding Status}" />
+
+                <DataGridTemplateColumn Header="Actualizar estado">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BTN_UpdateStatus" Content="Actualizar" Click="BTN_UpdateStatus_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Eliminar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BTN_Delete" Content="Eliminar" Click="BTN_Delete_Click" Background="Yellow"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+
+
+        </DataGrid>
+        <Button x:Name="BTN_Return" Content="Regresar" HorizontalAlignment="Left" Height="28" Margin="665,17,0,0" VerticalAlignment="Top" Width="105" Click="BTN_Return_Click"/>
+    </Grid>
+</Window>

@@ -10,13 +10,19 @@
     <Compile Update="Views\LibrariansViews\BookCatalog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\LibrariansViews\EditStatusWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\LibrariansViews\HelpMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\LibrariansViews\HomeMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\LibrariansViews\LoanForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\LibrariansViews\Students.xaml.cs">
+    <Compile Update="Views\LibrariansViews\ManageLoan.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\SuperAdminViews\ManageBooks.xaml.cs">
@@ -39,13 +45,19 @@
     <Page Update="Views\LibrariansViews\BookCatalog.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\LibrariansViews\EditStatusWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LibrariansViews\HelpMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\LibrariansViews\HomeMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\LibrariansViews\LoanForm.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\LibrariansViews\Students.xaml">
+    <Page Update="Views\LibrariansViews\ManageLoan.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SuperAdminViews\ManageBooks.xaml">

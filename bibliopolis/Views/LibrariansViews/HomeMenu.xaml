@@ -150,15 +150,15 @@
             <Image Source="/Images/enter.png" Height="25" Width="25"/>
         </Button>
 
-        <Label x:Name="LBL_WelcomeMessage" Content="Bienvenido, Eduardo" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Margin="68,23,0,0" Width="190" Height="40"/>
+        <Label x:Name="LBL_WelcomeMessage" Content="Bienvenido, bibliotecario" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Margin="68,23,0,0" Width="200" Height="40"/>
 
         <!--<Button x:Name="BTN_ManageStudent" Content="Gestionar Alumnos" HorizontalAlignment="Center" Height="56" Margin="0,323,0,0" VerticalAlignment="Top" Width="138" Click="BTN_ManageStudent_Click"/>-->
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0">
-            <Button x:Name="BTN_AddLending" Content="Agregar préstamo" Style="{StaticResource MainButtonStyle}" Click="BTN_AddLending_Click"/>
-            <Button x:Name="BTN_LendingRequest" Content="Gestionar préstamo" Style="{StaticResource MainButtonStyle}"/>
+            <Button x:Name="BTN_AddLoan" Content="Agregar préstamo" Style="{StaticResource MainButtonStyle}" Click="BTN_AddLoan_Click"/>
+            <Button x:Name="BTN_ManageLoan" Content="Gestionar préstamo" Style="{StaticResource MainButtonStyle}" Click="BTN_ManageLoan_Click"/>
             <Button x:Name="BTN_ShowCatalog" Content="Catálogo de libros" Style="{StaticResource MainButtonStyle}" Click="BTN_ShowCatalog_Click"/>
-            <Button x:Name="BTN_Help" Content="Ayuda" Style="{StaticResource MainButtonStyle}"/>
+            <Button x:Name="BTN_Help" Content="Ayuda" Style="{StaticResource MainButtonStyle}" Click="BTN_Help_Click"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,330,0,0">

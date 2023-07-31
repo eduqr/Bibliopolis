@@ -126,5 +126,13 @@ namespace bibliopolis.Services
                 throw new Exception("Sucedió un error (GetStudents)" + ex.Message);
             }
         }
+
+        public bool StudentExists(string registrationNumber)
+        {
+            using (var _context = new ApplicationDbContext())
+            {
+                return _context.Students.Any(x => x.RegistrationNumber == registrationNumber);
+            }
+        }
     }
 }

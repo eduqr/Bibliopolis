@@ -9,21 +9,19 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace bibliopolis.Views.LibrariansViews
 {
     /// <summary>
-    /// Lógica de interacción para LoanForm.xaml
+    /// Lógica de interacción para HelpMenu.xaml
     /// </summary>
-    public partial class LoanForm : Window
+    public partial class HelpMenu : Window
     {
-        public LoanForm()
+        public HelpMenu()
         {
             InitializeComponent();
         }
-
     }
 }

@@ -30,16 +30,16 @@ namespace bibliopolis.Validations
             return email.Contains("@");     // Retorna true si email contiene "@"
         }
 
-        public static bool IsNumericTextBox(TextBox textBox)
+        public static bool AreTextBoxesEmpty(IEnumerable<TextBox> textBoxes)
         {
-            if (!int.TryParse(textBox.Text, out _))
+            foreach (var textBox in textBoxes)
             {
-
-                textBox.Text = string.Empty;
-                textBox.Focus();
-                return false;
+                if (string.IsNullOrEmpty(textBox.Text))
+                {
+                    return true;
+                }
             }
-            return true;
+            return false;
         }
     }
 }

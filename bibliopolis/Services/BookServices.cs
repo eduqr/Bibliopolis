@@ -1,6 +1,7 @@
 ﻿using bibliopolis.Context;
 using bibliopolis.Entities;
 using bibliopolis.Validations;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -115,6 +116,41 @@ namespace bibliopolis.Services
             {
                 throw new Exception("Sucedió un error (GetBooks)" + ex.Message);
             }
+        }
+
+        public bool BookExists(string isbn)
+        {
+            using (var _context = new ApplicationDbContext())
+            {
+                return _context.Books.Any(x => x.ISBN == isbn);
+            }
+        }
+
+        public void UpdateUnits(string isbn, string indicador)
+        {
+            using (var _context = new ApplicationDbContext())
+            {
+                Book res = _context.Books.Find(isbn);
+
+                if (InputValidator.IsObjectNull(res))
+                {
+                    MessageBox.Show("Libro fue null (UpdateUnits)");
+                    return;
+                }
+
+                if (indicador == "ADD_UNIT")
+                {
+                    res.Units = res.Units + 1;
+                }
+                else if (indicador == "REMOVE_UNIT")
+                {
+                    res.Units = res.Units - 1;
+                }
+
+                _context.Books.Update(res);
+                _context.SaveChanges();
+            }
+                
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using MySql.EntityFrameworkCore.Metadata;
 
 namespace bibliopolis.Migrations
@@ -75,25 +76,67 @@ namespace bibliopolis.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Loans",
+                columns: table => new
+                {
+                    PkLoan = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    LoanDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    DueDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false),
+                    RegistrationNumber = table.Column<string>(type: "varchar(767)", nullable: false),
+                    ISBN = table.Column<string>(type: "varchar(767)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Loans", x => x.PkLoan);
+                    table.ForeignKey(
+                        name: "FK_Loans_Books_ISBN",
+                        column: x => x.ISBN,
+                        principalTable: "Books",
+                        principalColumn: "ISBN",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Loans_Students_RegistrationNumber",
+                        column: x => x.RegistrationNumber,
+                        principalTable: "Students",
+                        principalColumn: "RegistrationNumber",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Librarians_FkRole",
                 table: "Librarians",
                 column: "FkRole");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Loans_ISBN",
+                table: "Loans",
+                column: "ISBN");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Loans_RegistrationNumber",
+                table: "Loans",
+                column: "RegistrationNumber");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Books");
-
-            migrationBuilder.DropTable(
                 name: "Librarians");
 
             migrationBuilder.DropTable(
-                name: "Students");
+                name: "Loans");
 
             migrationBuilder.DropTable(
                 name: "Roles");
+
+            migrationBuilder.DropTable(
+                name: "Books");
+
+            migrationBuilder.DropTable(
+                name: "Students");
         }
     }
 }
