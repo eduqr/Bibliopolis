@@ -21,9 +21,9 @@
             <Setter Property="Background">
                 <Setter.Value>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Offset="0.1" Color="#CEB5B7"/>
+                        <GradientStop Offset="0.1" Color="#F0720B"/>
                         <!-- Naranja -->
-                        <GradientStop Offset="0.8" Color="#CCC9E7"/>
+                        <GradientStop Offset="0.8" Color="#F9793D"/>
                         <!-- Café -->
                     </LinearGradientBrush>
                 </Setter.Value>
@@ -41,8 +41,8 @@
                                 <Setter TargetName="ButtonBorder" Property="Background">
                                     <Setter.Value>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                            <GradientStop Offset="0" Color="#CCC9E7"/>
-                                            <GradientStop Offset="1" Color="#8E6596"/>
+                                            <GradientStop Offset="0" Color="#a43502 "/>
+                                            <GradientStop Offset="1" Color="#a43502 "/>
                                         </LinearGradientBrush>
                                     </Setter.Value>
                                 </Setter>
@@ -52,8 +52,8 @@
                                 <Setter TargetName="ButtonBorder" Property="Background">
                                     <Setter.Value>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                            <GradientStop Offset="0" Color="#8E6596"/>
-                                            <GradientStop Offset="1" Color="#6B4E71"/>
+                                            <GradientStop Offset="0" Color="#a43502 "/>
+                                            <GradientStop Offset="1" Color="#a43502 "/>
                                         </LinearGradientBrush>
                                     </Setter.Value>
                                 </Setter>
@@ -77,9 +77,9 @@
             <Setter Property="Background">
                 <Setter.Value>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Offset="0.1" Color="#CCC9E7"/>
+                        <GradientStop Offset="0.1" Color="#FF9A6A"/>
                         <!-- Naranja -->
-                        <GradientStop Offset="0.8" Color="#CCC9E7"/>
+                        <GradientStop Offset="0.8" Color="#FF9A6A"/>
                         <!-- Café -->
                     </LinearGradientBrush>
                 </Setter.Value>
@@ -97,8 +97,8 @@
                                 <Setter TargetName="ButtonBorder" Property="Background">
                                     <Setter.Value>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                            <GradientStop Offset="0" Color="#CCC9E7"/>
-                                            <GradientStop Offset="1" Color="#8E6596"/>
+                                            <GradientStop Offset="0" Color="#a43502 "/>
+                                            <GradientStop Offset="1" Color="#a43502 "/>
                                         </LinearGradientBrush>
                                     </Setter.Value>
                                 </Setter>
@@ -108,8 +108,8 @@
                                 <Setter TargetName="ButtonBorder" Property="Background">
                                     <Setter.Value>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                            <GradientStop Offset="0" Color="#8E6596"/>
-                                            <GradientStop Offset="1" Color="#6B4E71"/>
+                                            <GradientStop Offset="0" Color="#a43502 "/>
+                                            <GradientStop Offset="1" Color="#a43502 "/>
                                         </LinearGradientBrush>
                                     </Setter.Value>
                                 </Setter>
@@ -127,9 +127,9 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="FontFamily" Value="Montserrat"/>
-            <Setter Property="Foreground" Value="#6B4E71"/>
+            <Setter Property="Foreground" Value="#a43502"/>
             <Setter Property="Padding" Value="10"/>
-            <Setter Property="Background" Value="#F5EFED"/>
+            <Setter Property="Background" Value="#FFDEC2"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Label">
@@ -150,7 +150,7 @@
             <Image Source="/Images/enter.png" Height="25" Width="25"/>
         </Button>
 
-        <Label x:Name="LBL_WelcomeMessage" Content="Bienvenido, bibliotecario" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Margin="68,23,0,0" Width="200" Height="40"/>
+        <Label x:Name="LBL_WelcomeMessage" Content="Bienvenido, Eduardo" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Margin="68,23,0,0" Width="190" Height="40"/>
 
         <!--<Button x:Name="BTN_ManageStudent" Content="Gestionar Alumnos" HorizontalAlignment="Center" Height="56" Margin="0,323,0,0" VerticalAlignment="Top" Width="138" Click="BTN_ManageStudent_Click"/>-->
 

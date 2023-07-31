@@ -6,8 +6,83 @@
         xmlns:local="clr-namespace:bibliopolis.Views.LibrariansViews"
         mc:Ignorable="d"
         Title="ManageLoan" Height="300" Width="800">
+    <Window.Resources>
+        <Style x:Key="MainButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="10.5"/>
+            <Setter Property="Margin" Value="7.5"/>
+            <Setter Property="MinWidth" Value="108"/>
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Offset="0.1" Color="#F0720B"/>
+                        <!-- Naranja -->
+                        <GradientStop Offset="0.8" Color="#F0720B"/>
+                        <!-- Café -->
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBorder" Background="{TemplateBinding Background}"
+                            CornerRadius="10" SnapsToDevicePixels="True">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Efecto al pasar el mouse -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Offset="0" Color="#a43502 "/>
+                                            <GradientStop Offset="1" Color="#a43502 "/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <!-- Efecto al hacer clic -->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Offset="0" Color="#a43502 "/>
+                                            <GradientStop Offset="1" Color="#a43502 "/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ColoredDataGridStyle" TargetType="DataGrid">
+            <!-- Personaliza aquí los colores que desees -->
+            <Setter Property="Background" Value="#FFCEB7"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="RowBackground" Value="#FFCEB7"/>
+            <Setter Property="AlternatingRowBackground" Value="LightGray"/>
+            <Setter Property="BorderBrush" Value="White" />
+            <!-- Agrega más setters para personalizar otros aspectos del DataGrid -->
+        </Style>
+
+        <Style x:Key="CustomDataGridHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#FF8E30 "/>
+            <!-- Personaliza aquí el color de fondo del encabezado -->
+            <Setter Property="Foreground" Value="White"/>
+            <!-- Personaliza aquí el color del texto del encabezado -->
+            <Setter Property="BorderBrush" Value="#FF8E30" />
+        </Style>
+
+    </Window.Resources>
     <Grid>
-        <DataGrid x:Name="LoansTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="10,60,10,20">
+        <DataGrid x:Name="LoansTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="10,60,10,20" Style="{StaticResource ColoredDataGridStyle}" ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding PkLoan}" />
                 <DataGridTextColumn Header="´Matrícula" Binding="{Binding RegistrationNumber}" />
@@ -35,6 +110,6 @@
 
 
         </DataGrid>
-        <Button x:Name="BTN_Return" Content="Regresar" HorizontalAlignment="Left" Height="28" Margin="665,17,0,0" VerticalAlignment="Top" Width="105" Click="BTN_Return_Click"/>
+        <Button x:Name="BTN_Return" Content="Regresar" HorizontalAlignment="Left" Height="28" Margin="665,17,0,0" VerticalAlignment="Top" Width="105" Click="BTN_Return_Click" Style="{StaticResource MainButtonStyle}"/>
     </Grid>
 </Window>
