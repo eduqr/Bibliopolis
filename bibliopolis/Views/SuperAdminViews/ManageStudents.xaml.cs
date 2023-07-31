@@ -30,6 +30,7 @@ namespace bibliopolis.Views
         {
             InitializeComponent();
             GetStudentsTable();
+
         }
         
         private bool isEditMode = false;
@@ -38,9 +39,25 @@ namespace bibliopolis.Views
         {
             try
             {
-                if (!InputValidator.AreAllFieldsFilled(TXT_RegistrationNumber.Text, TXT_NameStudent.Text, TXT_LastnameStudent.Text, TXT_MailStudent.Text, TXT_PhoneNumberStudent.Text, SelectCareer.Text))
+                var textBoxesToValidate = new List<TextBox>
                 {
-                    MessageBox.Show("Por favor, complete todos los campos antes de agregar un alumno.");
+                    TXT_RegistrationNumber,
+                    TXT_PhoneNumberStudent,
+                    TXT_MailStudent,
+                    TXT_LastnameStudent,             
+                    TXT_NameStudent,
+                };
+               
+
+                if (InputValidator.AreTextBoxesEmpty(textBoxesToValidate))
+                {
+                    MessageBox.Show("Todos los campos son obligatorios");
+                    return;
+                }
+
+                if (SelectCareer.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Por favor, seleccione un programa educativo");
                     return;
                 }
 
