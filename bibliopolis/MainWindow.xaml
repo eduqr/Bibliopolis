@@ -142,7 +142,7 @@
                         </Button.Template>
                     </Button>
                     </StackPanel>
-                <Label Foreground="White" FontSize="12" FontWeight="Light" FontFamily="Montserrat" Content="Versión 0.7.9" HorizontalAlignment="Left" Height="25" Margin="10,360,0,0" Grid.Row="1" VerticalAlignment="Top" Width="95"/>
+                <Label Foreground="White" FontSize="12" FontWeight="Light" FontFamily="Montserrat" Content="Versión 0.8.3" HorizontalAlignment="Left" Height="25" Margin="10,360,0,0" Grid.Row="1" VerticalAlignment="Top" Width="95"/>
             </Grid>
         </Border>
     </Border>

@@ -162,9 +162,9 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,330,0,0">
-            <Label x:Name="L" Content="5 Libros registrados" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Width="240" Height="60" Margin="10" Padding="10"/>
-            <Label x:Name="L_Copy" Content="3 préstamos actuales" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Width="240" Height="60" Margin="10" Padding="10"/>
-            <Label x:Name="L_Copy3" Content="0 préstamos por vencer hoy" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Width="240" Height="60" Margin="10" Padding="10"/>
+            <Label x:Name="LBL_BookStats" Content="5 Libros registrados" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Width="240" Height="60" Margin="10" Padding="10"/>
+            <Label x:Name="LBL_LoanStats" Content="3 préstamos actuales" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Width="240" Height="60" Margin="10" Padding="10"/>
+            <Label x:Name="LBL_TodayLoanStats" Content="0 préstamos por vencer hoy" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Width="240" Height="60" Margin="10" Padding="10"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,100,0,213" Width="700">

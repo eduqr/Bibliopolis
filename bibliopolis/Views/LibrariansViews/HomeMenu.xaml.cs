@@ -1,4 +1,5 @@
-﻿using bibliopolis.Views.LibrariansViews;
+﻿using bibliopolis.Context;
+using bibliopolis.Views.LibrariansViews;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,9 @@ namespace bibliopolis.Views
         public HomeMenu()
         {
             InitializeComponent();
+            UpdateBooksStats();
+            UpdateLoanStats();
+            UpdateTodayLoanStats();
         }
 
         private void BTN_ReturnToLogin_Click(object sender, RoutedEventArgs e)
@@ -59,6 +63,56 @@ namespace bibliopolis.Views
         {
             HelpMenu help = new HelpMenu();
             help.Show();
+        }
+
+        private void UpdateBooksStats()
+        {
+            using (var _context = new ApplicationDbContext())
+            {
+                int amountBooks = _context.Books.Count();
+                if (amountBooks == 1)
+                {
+                    LBL_BookStats.Content = amountBooks + " libro registrado";
+                }
+                else
+                {
+                    LBL_BookStats.Content = amountBooks + " libros registrados";
+                }
+            }
+        }
+
+        private void UpdateLoanStats()
+        {
+            using (var _context = new ApplicationDbContext())
+            {
+                int amountLoans= _context.Loans.Count();
+                if (amountLoans == 1)
+                {
+                    LBL_LoanStats.Content = amountLoans + " préstamo actual";
+                }
+                else
+                {
+                    LBL_LoanStats.Content = amountLoans + " préstamos actuales";
+                }
+                
+            }
+        }
+
+        private void UpdateTodayLoanStats()
+        {
+            using (var _context = new ApplicationDbContext())
+            {
+                DateTime today = DateTime.Today;
+                int amountDueLoans = _context.Loans.Count(loan => loan.DueDate.Date == today.Date);
+                if (amountDueLoans == 1)
+                {
+                    LBL_TodayLoanStats.Content = amountDueLoans + " préstamo vence hoy";
+                }
+                else
+                {
+                    LBL_TodayLoanStats.Content = amountDueLoans + " préstamos vencen hoy";
+                }
+            }
         }
     }
 }
