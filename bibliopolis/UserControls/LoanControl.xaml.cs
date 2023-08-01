@@ -75,8 +75,8 @@ namespace bibliopolis.UserControls
                 return;
             }
 
-            StatusBar.Fill = Brushes.Black;
-            StatusTwo.Fill = Brushes.Black;
+            StatusBar.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F0720B"));
+            StatusTwo.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F0720B"));
 
             SP_BookForm.Visibility = Visibility.Visible;
             SP_StudenForm.Visibility = Visibility.Collapsed;

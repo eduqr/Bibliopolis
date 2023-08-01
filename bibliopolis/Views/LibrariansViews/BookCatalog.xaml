@@ -103,7 +103,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button x:Name="BTN_GoBack" Content="Regresar" HorizontalAlignment="Left" Height="24" Margin="682,10,0,0" VerticalAlignment="Top" Width="61" Click="BTN_GoBack_Click" Style="{StaticResource MainButtonStyle}" />
+        <Button x:Name="BTN_GoBack" Content="Regresar" HorizontalAlignment="Left" Height="24" Margin="619,10,0,0" VerticalAlignment="Top" Width="61" Click="BTN_GoBack_Click" Style="{StaticResource MainButtonStyle}" />
 
     </Grid>
 </Window>

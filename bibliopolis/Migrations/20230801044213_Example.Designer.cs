@@ -9,8 +9,8 @@ using bibliopolis.Context;
 namespace bibliopolis.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230731051623_example")]
-    partial class example
+    [Migration("20230801044213_Example")]
+    partial class Example
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

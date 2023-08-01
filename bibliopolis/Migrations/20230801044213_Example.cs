@@ -4,7 +4,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace bibliopolis.Migrations
 {
-    public partial class example : Migration
+    public partial class Example : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
