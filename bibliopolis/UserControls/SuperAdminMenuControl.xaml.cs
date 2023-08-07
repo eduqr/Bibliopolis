@@ -1,8 +1,4 @@
-﻿using bibliopolis.Services;
-using bibliopolis.Validations;
-using bibliopolis.Views;
-using Renci.SshNet.Messages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace bibliopolis
+namespace bibliopolis.UserControls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Lógica de interacción para SuperAdminMenuControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SuperAdminMenuControl : UserControl
     {
-        public MainWindow()
+        public SuperAdminMenuControl()
         {
             InitializeComponent();
         }

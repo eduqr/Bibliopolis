@@ -8,21 +8,38 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\add-librarian.png" />
     <None Remove="Images\arrow-small-left.png" />
     <None Remove="Images\bibliotecario.png" />
     <None Remove="Images\book.png" />
+    <None Remove="Images\books-background.jpg" />
     <None Remove="Images\bookstore.png" />
+    <None Remove="Images\email.png" />
     <None Remove="Images\enter.png" />
     <None Remove="Images\guide.png" />
     <None Remove="Images\key.png" />
+    <None Remove="Images\main-key.png" />
     <None Remove="Images\miniuser.png" />
     <None Remove="Images\open-book.png" />
+    <None Remove="Images\padlock.png" />
     <None Remove="Images\proceso.png" />
+    <None Remove="Images\reading-book.png" />
     <None Remove="Images\return.png" />
     <None Remove="Images\search-book.png" />
     <None Remove="Images\stack-books.png" />
+    <None Remove="Images\texture.jpeg" />
     <None Remove="Images\upqroo_logo.png" />
     <None Remove="Images\user.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\add-librarian.png" />
+    <Resource Include="Images\books-background.jpg" />
+    <Resource Include="Images\email.png" />
+    <Resource Include="Images\main-key.png" />
+    <Resource Include="Images\padlock.png" />
+    <Resource Include="Images\reading-book.png" />
+    <Resource Include="Images\texture.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
