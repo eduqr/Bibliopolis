@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bibliopolis.Views"
         mc:Ignorable="d"
-        Title="SuperAdminMenu" Height="450" Width="800">
+        Title="Bibliopolis - Navegación" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#f8f9fb">
     <Window.Resources>
         <Style x:Key="MainButtonStyle" TargetType="Button">
             <Setter Property="Foreground" Value="White"/>
@@ -144,18 +144,18 @@
         </Style>
     </Window.Resources>
     <Grid Background="White">
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="94,120,0,193" Width="639">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="77,151,0,162" Width="639">
             <Image Source="/Images/bibliotecario.png" Height="102" Width="100" Stretch="UniformToFill" Margin="17,0,0,0"/>
-            <Image Source="/Images/proceso.png" Height="102" Width="102" Stretch="UniformToFill" Margin="160,-5,0,0"/>
+            <Image Source="/Images/proceso.png" Height="102" Width="102" Stretch="UniformToFill" Margin="160,5,0,0"/>
             <Image Source="/Images/stack-books.png" Height="111" Width="111" Stretch="UniformToFill" Margin="140,-5,0,0"/>
         </StackPanel>
         <Button x:Name="BTN_ReturnToLogin" HorizontalAlignment="Left" Margin="20,24,0,0" VerticalAlignment="Top" Height="38" Width="38" Style="{StaticResource AccountButtonStyle}" Click="BTN_ReturnToLogin_Click">
             <Image Source="/Images/enter.png" Height="25" Width="25"/>
         </Button>
         <Label x:Name="LBL_WelcomeMessage" Content="Bienvenido, Admin" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource WelcomeLabelStyle}" Margin="68,23,0,0" Width="190" Height="40"/>
-        <Button x:Name="BTN_ManageLibrarians" Content="Gestionar bibliotecarios" HorizontalAlignment="Left" Height="39" Margin="68,246,0,0" VerticalAlignment="Top" Width="145" Click="BTN_ManageLibrarians_Click"  Style="{StaticResource MainButtonStyle}"/>
-        <Button x:Name="BTN_ManageStudents" Content="Gestionar alumnos" HorizontalAlignment="Left" Height="39" Margin="324,246,0,0" VerticalAlignment="Top" Width="152" Click="BTN_ManageStudents_Click"  Style="{StaticResource MainButtonStyle}"/>
-        <Button x:Name="BTN_ManageBooks" Content="Gestionar libros" HorizontalAlignment="Left" Height="39" Margin="577,246,0,0" VerticalAlignment="Top" Width="152" Click="BTN_ManageBooks_Click"  Style="{StaticResource MainButtonStyle}"/>
+        <Button x:Name="BTN_ManageLibrarians" Content="Gestionar bibliotecarios" HorizontalAlignment="Left" Height="39" Margin="55,299,0,0" VerticalAlignment="Top" Width="145" Click="BTN_ManageLibrarians_Click"  Style="{StaticResource MainButtonStyle}"/>
+        <Button x:Name="BTN_ManageStudents" Content="Gestionar alumnos" HorizontalAlignment="Left" Height="39" Margin="315,299,0,0" VerticalAlignment="Top" Width="152" Click="BTN_ManageStudents_Click"  Style="{StaticResource MainButtonStyle}"/>
+        <Button x:Name="BTN_ManageBooks" Content="Gestionar libros" HorizontalAlignment="Left" Height="39" Margin="570,299,0,0" VerticalAlignment="Top" Width="152" Click="BTN_ManageBooks_Click"  Style="{StaticResource MainButtonStyle}"/>
 
     </Grid>
 </Window>

@@ -7,9 +7,6 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="UserControls\LoginControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="UserControls\SuperAdminMenuControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -40,15 +37,15 @@
     <Compile Update="Views\SuperAdminViews\ManageStudents.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\SuperAdminViews\MenuSA.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\SuperAdminViews\SuperAdminMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="UserControls\LoginControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserControls\SuperAdminMenuControl.xaml">
@@ -79,6 +76,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SuperAdminViews\ManageStudents.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SuperAdminViews\MenuSA.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SuperAdminViews\SuperAdminMenu.xaml">

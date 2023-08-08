@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bibliopolis.Views.LibrariansViews"
         mc:Ignorable="d"
-        Title="BookCatalog" Height="450" Width="800">
+        Title="Bibliopolis - Catálogo de libros" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#f8f9fb">
     <Window.Resources>
         <Style x:Key="MainButtonStyle" TargetType="Button">
             <Setter Property="Foreground" Value="White"/>

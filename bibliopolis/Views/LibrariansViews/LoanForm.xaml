@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bibliopolis.UserControls"
         mc:Ignorable="d"
-        Title="LoanForm" Height="600" Width="800">
+        Title="Bibliopolis" Height="550" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#f8f9fb">
 
     <Grid>
-        <local:LoanControl x:Name="UserControl_Loan" Width="270" Height="500" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <local:LoanControl x:Name="UserControl_Loan" Height="500" Width="270" HorizontalAlignment="Center" VerticalAlignment="Top"/>
     </Grid>
 </Window>

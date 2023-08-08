@@ -10,6 +10,7 @@ Proyecto de gestión bibliotecaria propuesto para la [UPQROO](https://upqroo.edu
 
 #### Recursos
 * [flaticon](https://www.flaticon.es/)
+* [freepik](https://www.freepik.com/)
 
 #### Equipo de trabajo
 * Adrián V.

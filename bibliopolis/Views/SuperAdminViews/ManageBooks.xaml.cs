@@ -38,12 +38,12 @@ namespace bibliopolis.Views.SuperAdminViews
 
         private void BTN_Clear_Click(object sender, RoutedEventArgs e)
         {
-            TxtISBN.Clear();
-            TxtTitle.Clear();
-            TxtAuthor.Clear();
-            TxtEditorial.Clear();
-            TxtUnits.Clear();
-            TxtISBN.IsEnabled = true;
+            TXT_ISBN.Clear();
+            TXT_Title.Clear();
+            TXT_Author.Clear();
+            TXT_Editorial.Clear();
+            TXT_Units.Clear();
+            TXT_ISBN.IsEnabled = true;
         }
 
         private void BTN_GoBack_Click(object sender, RoutedEventArgs e)
@@ -60,12 +60,12 @@ namespace bibliopolis.Views.SuperAdminViews
             book = (sender as FrameworkElement).DataContext as Book;
 
 
-            TxtISBN.Text = book.ISBN;
-            TxtISBN.IsEnabled = false;
-            TxtTitle.Text = book.Title;
-            TxtAuthor.Text = book.Author;
-            TxtEditorial.Text = book.Editorial;
-            TxtUnits.Text = book.Units.ToString();  ///////////////////////////
+            TXT_ISBN.Text = book.ISBN;
+            TXT_ISBN.IsEnabled = false;
+            TXT_Title.Text = book.Title;
+            TXT_Author.Text = book.Author;
+            TXT_Editorial.Text = book.Editorial;
+            TXT_Units.Text = book.Units.ToString();  ///////////////////////////
 
             isEditMode = true;
             GetBooksTable();
@@ -87,7 +87,7 @@ namespace bibliopolis.Views.SuperAdminViews
             try
             {
 
-                if (!InputValidator.IsNumber(TxtISBN.Text) || !InputValidator.IsNumber(TxtUnits.Text))
+                if (!InputValidator.IsNumber(TXT_ISBN.Text) || !InputValidator.IsNumber(TXT_Units.Text))
                 {
                     MessageBox.Show("Por favor, asegúrese de que el ISBN y el número de existencias sean valores numéricos.");
                     return;
@@ -96,11 +96,11 @@ namespace bibliopolis.Views.SuperAdminViews
                 {
 
                     Book book = new Book();
-                    book.ISBN = TxtISBN.Text;
-                    book.Title = TxtTitle.Text;
-                    book.Author = TxtAuthor.Text;
-                    book.Editorial = TxtEditorial.Text;
-                    book.Units = int.Parse(TxtUnits.Text);  ///////////////////
+                    book.ISBN = TXT_ISBN.Text;
+                    book.Title = TXT_Title.Text;
+                    book.Author = TXT_Author.Text;
+                    book.Editorial = TXT_Editorial.Text;
+                    book.Units = int.Parse(TXT_Units.Text);  ///////////////////
 
                     if (isEditMode)
                     {

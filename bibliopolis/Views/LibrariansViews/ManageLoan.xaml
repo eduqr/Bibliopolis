@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bibliopolis.Views.LibrariansViews"
         mc:Ignorable="d"
-        Title="ManageLoan" Height="300" Width="800">
+        Title="Bibliopolis - Gestión de préstamos" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#f8f9fb">
     <Window.Resources>
         <Style x:Key="MainButtonStyle" TargetType="Button">
             <Setter Property="Foreground" Value="White"/>
@@ -82,10 +82,10 @@
 
     </Window.Resources>
     <Grid>
-        <DataGrid x:Name="LoansTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="10,60,10,20" Style="{StaticResource ColoredDataGridStyle}" ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
+        <DataGrid x:Name="LoansTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="30,60,30,20" Style="{StaticResource ColoredDataGridStyle}" ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding PkLoan}" />
-                <DataGridTextColumn Header="´Matrícula" Binding="{Binding RegistrationNumber}" />
+                <DataGridTextColumn Header="Matrícula" Binding="{Binding RegistrationNumber}" />
                 <DataGridTextColumn Header="ISBN" Binding="{Binding ISBN}" />
                 <DataGridTextColumn Header="Fecha préstamo" Binding="{Binding LoanDate, StringFormat='{}{0:dd/MM/yyyy}'}" />
                 <DataGridTextColumn Header="Fecha devolución" Binding="{Binding DueDate, StringFormat='{}{0:dd/MM/yyyy}'}" />
@@ -94,14 +94,14 @@
                 <DataGridTemplateColumn Header="Actualizar estado">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="BTN_UpdateStatus" Content="Actualizar" Click="BTN_UpdateStatus_Click"/>
+                            <Button x:Name="BTN_UpdateStatus" Content="Actualizar" Click="BTN_UpdateStatus_Click" Background="#C98E71"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Eliminar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="BTN_Delete" Content="Eliminar" Click="BTN_Delete_Click" Background="Yellow"/>
+                            <Button x:Name="BTN_Delete" Content="Eliminar" Click="BTN_Delete_Click" Background="#CA6536"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

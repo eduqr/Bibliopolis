@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bibliopolis.Views.LibrariansViews"
         mc:Ignorable="d"
-        Title="HelpMenu" Height="220" Width="300">
+        Title="Bibliopolis - Ayuda" Height="220" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#f8f9fb">
     <Grid>
-        <TextBlock Text="Para cuestiones generales pide ayuda al Super Admin de la biblioteca" HorizontalAlignment="Left" Height="40" Margin="26,20,0,0" VerticalAlignment="Top" Width="242" TextWrapping="Wrap" TextAlignment="Center"/>
+        <TextBlock Text="Para cuestiones generales pida ayuda al Super Admin de la biblioteca" HorizontalAlignment="Left" Height="40" Margin="26,20,0,0" VerticalAlignment="Top" Width="242" TextWrapping="Wrap" TextAlignment="Center"/>
         <TextBlock Text="Contáctanos si encuentras algún problema: soporte@bibliopolis.com" HorizontalAlignment="Left" Height="40" Margin="26,77,0,0" VerticalAlignment="Top" Width="242" TextWrapping="Wrap" TextAlignment="Center"/>
         <TextBlock Text="¿Quieres aportar a Bibliopolis? Visita nuestro GitHub: https://github.com/eduqr/Bibliopolis" HorizontalAlignment="Left" Height="40" Margin="26,134,0,0" VerticalAlignment="Top" Width="242" TextWrapping="Wrap" TextAlignment="Center"/>
 

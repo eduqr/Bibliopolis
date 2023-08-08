@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bibliopolis.Views.SuperAdminViews"
         mc:Ignorable="d"
-        Title="ManageBooks" Height="450" Width="800">
+        Title="Bibliopolis - Gestionar libros" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#f8f9fb">
     <Window.Resources>
         <Style x:Key="MainButtonStyle" TargetType="Button">
             <Setter Property="Foreground" Value="White"/>
@@ -178,81 +178,124 @@
     </Window.Resources>
 
     <Grid>
-        <TextBox x:Name="TxtISBN" 
-                 MaxLength="13"
-                 HorizontalAlignment="Left"
-                 Margin="33,87,0,0"
-                 FontSize="13"
-                 FontWeight="Medium"
-                 FontFamily="Montserrat"                            
-                 Foreground="Black"
-                 CaretBrush="White"
-                 BorderBrush="Black"
-                 BorderThickness="0,0,0,2"
-                 VerticalAlignment="Top"
-                 Width="120"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Label Content="ISBN" Margin="5,0,0,0" HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+            <TextBox x:Name="TXT_ISBN"
+                    MaxLength="13"
+                    Margin="10,0,0,0"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    Foreground="Black"
+                    CaretBrush="White"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,2"
+                    Height="28"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Padding="20,0,0,0">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Images/user.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                </TextBox.Background>
+            </TextBox>
 
-        <TextBox x:Name="TxtTitle" 
-                 HorizontalAlignment="Left"
-                 Margin="33,145,0,0"
-                 FontSize="13"
-                 FontWeight="Medium"
-                 FontFamily="Montserrat"                            
-                 Foreground="Black"
-                 CaretBrush="White"
-                 BorderBrush="Black"
-                 BorderThickness="0,0,0,2"
-                 VerticalAlignment="Top"
-                 Width="120"/>
+            <Label Content="Título" Margin="5,20,0,0" HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+            <TextBox x:Name="TXT_Title"
+                    MaxLength="20"
+                    Margin="10,0,0,0"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    Foreground="Black"
+                    CaretBrush="White"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,2"
+                    Height="28"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Padding="20,0,0,0">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Images/user.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                </TextBox.Background>
+            </TextBox>
 
-        <TextBox x:Name="TxtAuthor" 
-                 HorizontalAlignment="Left"
-                 Margin="33,206,0,0"
-                 FontSize="13"
-                 FontWeight="Medium"
-                 FontFamily="Montserrat"                            
-                 Foreground="Black"
-                 CaretBrush="White"
-                 BorderBrush="Black"
-                 BorderThickness="0,0,0,2"
-                 VerticalAlignment="Top"
-                 Width="120"/>
+            <Label Content="Autor" Margin="5,20,0,0" HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+            <TextBox x:Name="TXT_Author"
+                    MaxLength="20"
+                    Margin="10,0,0,0"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    Foreground="Black"
+                    CaretBrush="White"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,2"
+                    Height="28"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Padding="20,0,0,0">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Images/user.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                </TextBox.Background>
+            </TextBox>
 
-        <TextBox x:Name="TxtEditorial" 
-                 HorizontalAlignment="Left"
-                 Margin="33,269,0,0"
-                 TextWrapping="Wrap"
-                 VerticalAlignment="Top"
-                 FontSize="13"
-                 FontWeight="Medium"
-                 FontFamily="Montserrat"                            
-                 Foreground="Black"
-                 CaretBrush="White"
-                 BorderBrush="Black"
-                 BorderThickness="0,0,0,2"
-                 Width="120"/>
+            <Label Content="Editorial" Margin="5,20,0,0" HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+            <TextBox x:Name="TXT_Editorial"
+                    MaxLength="30"
+                    Margin="10,0,0,0"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    Foreground="Black"
+                    CaretBrush="White"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,2"
+                    Height="28"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Padding="20,0,0,0">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Images/user.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                </TextBox.Background>
+            </TextBox>
 
-        <TextBox x:Name="TxtUnits" 
-                 HorizontalAlignment="Left"
-                 Margin="33,342,0,0"
-                 TextWrapping="Wrap"
-                 VerticalAlignment="Top"
-                 FontSize="13"
-                 FontWeight="Medium"
-                 FontFamily="Montserrat"                            
-                 Foreground="Black"
-                 CaretBrush="White"
-                 BorderBrush="Black"
-                 BorderThickness="0,0,0,2"
-                 Width="120"/>
+            <Label Content="Existencias" Margin="5,20,0,0" HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+            <TextBox x:Name="TXT_Units"
+                    MaxLength="10"
+                    Margin="10,0,0,0"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    Foreground="Black"
+                    CaretBrush="White"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,2"
+                    Height="28"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Padding="20,0,0,0">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Images/user.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                </TextBox.Background>
+            </TextBox>
+        </StackPanel>
 
-        <Label Content="ISBN" HorizontalAlignment="Left" Height="24" Margin="33,58,0,0" VerticalAlignment="Top" Width="71" FontFamily="Segoe UI Semibold"/>
-        <Label Content="Título" HorizontalAlignment="Left" Height="24" Margin="33,116,0,0" VerticalAlignment="Top" Width="71" FontFamily="Segoe UI Semibold"/>
-        <Label Content="Autor" HorizontalAlignment="Left" Height="24" Margin="33,177,0,0" VerticalAlignment="Top" Width="71" FontFamily="Segoe UI Semibold"/>
-        <Label Content="Editorial" HorizontalAlignment="Left" Height="24" Margin="33,240,0,0" VerticalAlignment="Top" Width="71" FontFamily="Segoe UI Semibold"/>
-        <Label Content="Existencias" HorizontalAlignment="Left" Height="24" Margin="33,313,0,0" VerticalAlignment="Top" Width="71" FontFamily="Segoe UI Semibold"/>
-
-        <DataGrid  x:Name="DataGridBooks" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" Margin="214,77,24,77" Style="{StaticResource ColoredDataGridStyle}" ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
+        <DataGrid  x:Name="DataGridBooks" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" Margin="185,57,10,70" Style="{StaticResource ColoredDataGridStyle}" ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ISBN" Binding="{Binding ISBN}" />
@@ -275,14 +318,13 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-
+            
             </DataGrid.Columns>
-
         </DataGrid>
 
-        <Button x:Name="BTN_Save" Content="Guardar" HorizontalAlignment="Left" Height="30" Margin="33,378,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Save_Click" Style="{StaticResource MainButtonStyle}" />
-        <Button x:Name="BTN_Clear" Content="Limpiar" HorizontalAlignment="Left" Height="30" Margin="171,378,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Clear_Click" Style="{StaticResource MainButtonStyle}" />
-        <Button x:Name="BTN_GoBack" Content="Regresar" HorizontalAlignment="Left" Height="24" Margin="663,17,0,0" VerticalAlignment="Top" Width="61" Click="BTN_GoBack_Click" Style="{StaticResource MainButtonStyle}" />
+        <Button x:Name="BTN_Save" Content="Guardar" Width="108" Height="30" Margin="185,0,485,34" VerticalAlignment="Bottom" Click="BTN_Save_Click" Style="{StaticResource MainButtonStyle}"/>
+        <Button x:Name="BTN_GoBack" Content="Regresar" Width="108" Height="30" Margin="0,10,10,0" HorizontalAlignment="Right" VerticalAlignment="Top" Click="BTN_GoBack_Click" Style="{StaticResource MainButtonStyle}"/>
+        <Button x:Name="BTN_Clear" Content="Limpiar" Width="108" Height="30" Margin="0,0,10,34" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="BTN_Clear_Click" Style="{StaticResource MainButtonStyle}"/>
 
     </Grid>
     

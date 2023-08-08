@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bibliopolis.Views.LibrariansViews"
         mc:Ignorable="d"
-        Title="EditStatusWindow" Height="160" Width="300">
+        Title="Estado" Height="160" Width="250" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#f8f9fb">
     <Window.Resources>
         <Style x:Key="MainButtonStyle" TargetType="Button">
             <Setter Property="Foreground" Value="White"/>
@@ -67,6 +67,6 @@
         <RadioButton Content="Activo" IsChecked="{Binding IsActivo}" />
         <RadioButton Content="Vencido" IsChecked="{Binding IsVencido}" />
         <RadioButton Content="Devuelto" IsChecked="{Binding IsDevuelto}" />
-        <Button Content="Aceptar" Click="BtnAceptar_Click" Margin="0,10,0,0" Style="{StaticResource MainButtonStyle}" Width="138"/>
+        <Button Content="Aceptar" Click="BtnAceptar_Click" Margin="0,20,0,0" Style="{StaticResource MainButtonStyle}" Width="138"/>
     </StackPanel>
 </Window>

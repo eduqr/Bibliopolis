@@ -97,7 +97,7 @@ namespace bibliopolis.Views
                 }
 
                 GetStudentsTable();
-                TXT_RegistrationNumber.IsEnabled = true;
+                ClearTextBoxes();
             }
             catch (Exception ex)
             {
@@ -148,6 +148,11 @@ namespace bibliopolis.Views
         }
 
         private void BTN_Clear_Click(object sender, RoutedEventArgs e)
+        {
+            ClearTextBoxes();
+        }
+
+        private void ClearTextBoxes()
         {
             TXT_RegistrationNumber.Clear();
             TXT_NameStudent.Clear();

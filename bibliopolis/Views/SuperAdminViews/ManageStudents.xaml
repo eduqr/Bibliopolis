@@ -5,18 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bibliopolis.Views"
         mc:Ignorable="d"
-        Title="ManageStudents" Height="580" Width="800">
+        Title="Bibliopolis - Gestionar alumnos" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#f8f9fb">
     <Window.Resources>
         <Style x:Key="MainButtonStyle" TargetType="Button">
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontFamily" Value="Montserrat"/>
             <Setter Property="FontSize" Value="16"/>
-            <Setter Property="Padding" Value="10.5"/>
-            <Setter Property="Margin" Value="7.5"/>
-            <Setter Property="MinWidth" Value="108"/>
-            <Setter Property="MinHeight" Value="30"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Background">
                 <Setter.Value>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -137,29 +131,6 @@
             </Setter>
         </Style>
 
-        <Style x:Key="WelcomeLabelStyle" TargetType="Label">
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="16"/>
-            <Setter Property="FontFamily" Value="Montserrat"/>
-            <Setter Property="Foreground" Value="#6B4E71"/>
-            <Setter Property="Padding" Value="10"/>
-            <Setter Property="Background" Value="#F5EFED"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Label">
-                        <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            CornerRadius="10" Padding="{TemplateBinding Padding}">
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
         <Style x:Key="CustomDataGridStyle" TargetType="{x:Type DataGrid}">
             <Setter Property="Background" Value="#FFFFDFDF" />
             <!-- Color naranja claro de fondo -->
@@ -176,114 +147,138 @@
             <!-- Otros ajustes visuales que desees aplicar -->
         </Style>
     </Window.Resources>
+
     <Grid>
-        <Label Content="Matricula" HorizontalAlignment="Left" Height="24" Margin="2,28,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Label Content="Matrícula" Margin="5,10,0,0" HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+            <TextBox x:Name="TXT_RegistrationNumber"
+                    MaxLength="9"
+                    Margin="10,0,0,0"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    Foreground="Black"
+                    CaretBrush="White"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,2"
+                    Height="28"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Padding="20,0,0,0">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Images/user.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                </TextBox.Background>
+            </TextBox>
 
-        <TextBox x:Name="TXT_RegistrationNumber"
-                             
-                             MaxLength="9"
-                             FontSize="13"
-                             FontWeight="Medium"
-                             FontFamily="Montserrat"                            
-                             Foreground="Black"
-                             CaretBrush="White"
-                             BorderBrush="Black"
-                             BorderThickness="0,0,0,2"
-                             Height="28"
-                             VerticalContentAlignment="Center"
-                             Margin="7,52,648,454"
-                             Padding="20,0,0,0" 
-                             
-                 >
+            <Label Content="Nombre" Margin="5,20,0,0" HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+            <TextBox x:Name="TXT_NameStudent"
+                    MaxLength="20"
+                    Margin="10,0,0,0"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    Foreground="Black"
+                    CaretBrush="White"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,2"
+                    Height="28"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Padding="20,0,0,0">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Images/user.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                </TextBox.Background>
+            </TextBox>
 
-            <TextBox.Background>
-                <ImageBrush ImageSource="/Images/user.png"
-                                        Stretch="None"
-                                        AlignmentX="Left"/>
-            </TextBox.Background>
-        </TextBox>
-        <TextBox x:Name="TXT_NameStudent"           
-            FontSize="13"
-            FontWeight="Medium"
-            FontFamily="Montserrat"                            
-            Foreground="Black"
-            CaretBrush="White"
-            BorderBrush="Black"
-            BorderThickness="0,0,0,2"
-            Height="28"
-            VerticalContentAlignment="Center"
-            Margin="2,109,653,397"
-            Padding="20,0,0,0">
-            <TextBox.Background>
-                <ImageBrush ImageSource="/Images/user.png"
-                    Stretch="None"
-                    AlignmentX="Left"/>
-            </TextBox.Background>
-        </TextBox>
-        <Label Content="Nombre" HorizontalAlignment="Left" Height="24" Margin="2,85,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
-        <TextBox x:Name="TXT_LastnameStudent"
-            FontSize="13"
-            FontWeight="Medium"
-            FontFamily="Montserrat"                            
-            Foreground="Black"
-            CaretBrush="White"
-            BorderBrush="Black"
-            BorderThickness="0,0,0,2"
-            Height="28"
-            VerticalContentAlignment="Center"
-            Margin="0,168,655,338"
-            Padding="20,0,0,0">
+            <Label Content="Apellido" Margin="5,20,0,0" HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+            <TextBox x:Name="TXT_LastnameStudent"
+                    MaxLength="20"
+                    Margin="10,0,0,0"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    Foreground="Black"
+                    CaretBrush="White"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,2"
+                    Height="28"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Padding="20,0,0,0">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Images/user.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                </TextBox.Background>
+            </TextBox>
 
-            <TextBox.Background>
-                <ImageBrush ImageSource="/Images/user.png"
-                    Stretch="None"
-                    AlignmentX="Left"/>
-            </TextBox.Background>
-        </TextBox>
-        <Label Content="Apellido" HorizontalAlignment="Left" Height="24" Margin="2,142,0,0" VerticalAlignment="Top" Width="156" FontFamily="Segoe UI Semibold"/>
-        <Label Content="Correo" HorizontalAlignment="Left" Height="24" Margin="2,196,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
-        <TextBox x:Name="TXT_MailStudent"
-            FontSize="13"
-            FontWeight="Medium"
-            FontFamily="Montserrat"                            
-            Foreground="Black"
-            CaretBrush="White"
-            BorderBrush="Black"
-            BorderThickness="0,0,0,2"
-            Height="28"
-            VerticalContentAlignment="Center"
-            Margin="0,225,655,281"
-            Padding="20,0,0,0">
-            <TextBox.Background>
-                <ImageBrush ImageSource="/Images/user.png"
-                    Stretch="None"
-                    AlignmentX="Left"/>
-            </TextBox.Background>
-        </TextBox>
-        <TextBox x:Name="TXT_PhoneNumberStudent"
+            <Label Content="Correo" Margin="5,20,0,0" HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+            <TextBox x:Name="TXT_MailStudent"
+                    MaxLength="30"
+                    Margin="10,0,0,0"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    Foreground="Black"
+                    CaretBrush="White"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,2"
+                    Height="28"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Padding="20,0,0,0">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Images/user.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                </TextBox.Background>
+            </TextBox>
+
+            <Label Content="Teléfono" Margin="5,20,0,0" HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+            <TextBox x:Name="TXT_PhoneNumberStudent"
+                    MaxLength="10"
+                    Margin="10,0,0,0"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    Foreground="Black"
+                    CaretBrush="White"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,2"
+                    Height="28"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Padding="20,0,0,0">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Images/user.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                </TextBox.Background>
+            </TextBox>
             
-            MaxLength="10"
-            FontSize="13"
-            FontWeight="Medium"
-            FontFamily="Montserrat"                            
-            Foreground="Black"
-            CaretBrush="White"
-            BorderBrush="Black"
-            BorderThickness="0,0,0,2"
-            Height="28"
-            VerticalContentAlignment="Center"
-            Margin="0,285,655,221"
-            Padding="20,0,0,0" >
-            <TextBox.Background>
-                <ImageBrush ImageSource="/Images/user.png"
-                    Stretch="None"
-                    AlignmentX="Left"/>
-            </TextBox.Background>
-        </TextBox>
-        <Label Content="Teléfono" HorizontalAlignment="Left" Height="24" Margin="2,261,0,0" VerticalAlignment="Top" Width="160" FontFamily="Segoe UI Semibold"/>
-        <Button x:Name="BTN_Save" Content="Guardar" HorizontalAlignment="Left" Height="30" Margin="30,441,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Save_Click" Style="{StaticResource MainButtonStyle}"/>
+            <Label Content="Carrera" VerticalContentAlignment="Center" Margin="5,20,10,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontFamily="Segoe UI Semibold"/>
+               
+            <ComboBox x:Name="SelectCareer" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Height="28" >
+                <ComboBoxItem Content="Ing. Software" />
+                <ComboBoxItem Content="Ing. Financiera" />
+                <ComboBoxItem Content="Ing. Biomédica" />
+                <ComboBoxItem Content="Ing. Biotecnología"/>
+                <ComboBoxItem Content="Lic. Terapia física"/>
+                <ComboBoxItem Content="Lic. Administración"/>
+            </ComboBox>
 
-        <DataGrid x:Name="StudentTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="178,57,12,52"  Style="{StaticResource ColoredDataGridStyle}" ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
+        </StackPanel>
+
+        <DataGrid x:Name="StudentTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="185,57,10,70"  Style="{StaticResource ColoredDataGridStyle}" ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
 
             <DataGrid.Columns >
                 <DataGridTextColumn Header="Matricula" Binding="{Binding RegistrationNumber}" />
@@ -309,23 +304,11 @@
                 </DataGridTemplateColumn>
 
             </DataGrid.Columns>
-
-
         </DataGrid>
-        <Label Content="Carrera" HorizontalAlignment="Left" Height="27" Margin="31,357,0,0" VerticalAlignment="Top" Width="113" FontFamily="Segoe UI Semibold" HorizontalContentAlignment="Center" FontSize="16"/>
-        <ComboBox x:Name="SelectCareer"  HorizontalAlignment="Left" Margin="36,389,0,0" VerticalAlignment="Top" Width="102" >
-            <ComboBoxItem Content="Ing. Software" />
-            <ComboBoxItem Content="Ing. Financiera" />
-            <ComboBoxItem Content="Ing. Biomédica" />
-            <ComboBoxItem Content="Ing. Biotecnología"/>
-            <ComboBoxItem Content="Lic. Terapia física"/>
-            <ComboBoxItem Content="Lic. Administración"/>
 
-        </ComboBox>
-
-
-        <Button x:Name="BTN_GoBack" Content="Regresar" HorizontalAlignment="Left" Height="24" Margin="680,11,0,0" VerticalAlignment="Top" Width="61" Click="BTN_GoBack_Click" Style="{StaticResource MainButtonStyle}"/>
-        <Button x:Name="BTN_Clear" Content="Limpiar" HorizontalAlignment="Left" Height="30" Margin="31,478,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Clear_Click" Style="{StaticResource MainButtonStyle}" />
+        <Button x:Name="BTN_Save" Content="Guardar" Width="108" Height="30" Margin="185,0,485,34" VerticalAlignment="Bottom" Click="BTN_Save_Click" Style="{StaticResource MainButtonStyle}"/>
+        <Button x:Name="BTN_GoBack" Content="Regresar" Width="108" Height="30" Margin="0,10,10,0" HorizontalAlignment="Right" VerticalAlignment="Top" Click="BTN_GoBack_Click" Style="{StaticResource MainButtonStyle}"/>
+        <Button x:Name="BTN_Clear" Content="Limpiar" Width="108" Height="30" Margin="0,0,10,34" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="BTN_Clear_Click" Style="{StaticResource MainButtonStyle}"/>
 
     </Grid>
 </Window>

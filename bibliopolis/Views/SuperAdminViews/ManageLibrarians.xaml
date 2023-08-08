@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bibliopolis.Views"
         mc:Ignorable="d"
-        Title="Gestionar bibliotecarios" Height="580" Width="800">
+        Title="Bibliopolis - Gestionar bibliotecarios" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#f8f9fb">
     <Window.Resources>
         <Style x:Key="MainButtonStyle" TargetType="Button">
             <Setter Property="Foreground" Value="White"/>
@@ -177,126 +177,153 @@
         </Style>
     </Window.Resources>
 
-    <Grid >
-        <Label Content="ID Bibliotecario" HorizontalAlignment="Left" Height="24" Margin="2,28,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Label Content="Bibliotecario ID" Margin="5,0,0,0" HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+            <TextBox x:Name="TXT_PkLibrarian"
+                    MaxLength="9"
+                    Margin="10,0,0,0"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    Foreground="Black"
+                    CaretBrush="White"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,2"
+                    Height="28"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Padding="20,0,0,0"
+                    IsEnabled="False">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Images/user.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                </TextBox.Background>
+            </TextBox>
 
-        <TextBox x:Name="TXT_PkLibrarian"
-                             
-                             FontSize="13"
-                             FontWeight="Medium"
-                             FontFamily="Montserrat"                            
-                             Foreground="Black"
-                             CaretBrush="White"
-                             BorderBrush="Black"
-                             BorderThickness="0,0,0,2"
-                             Height="28"
-                             VerticalContentAlignment="Center"
-                             Margin="11,41,644,464"
-                             Padding="20,0,0,0" IsEnabled="False">
-            <TextBox.Background>
-                <ImageBrush ImageSource="/Images/user.png"
-                                        Stretch="None"
-                                        AlignmentX="Left"/>
-            </TextBox.Background>
-        </TextBox>
-        <TextBox x:Name="TXT_Name"           
-            FontSize="13"
-            FontWeight="Medium"
-            FontFamily="Montserrat"                            
-            Foreground="Black"
-            CaretBrush="White"
-            BorderBrush="Black"
-            BorderThickness="0,0,0,2"
-            Height="28"
-            VerticalContentAlignment="Center"
-            Margin="11,97,644,408"
-            Padding="20,0,0,0">
-            <TextBox.Background>
-                <ImageBrush ImageSource="/Images/user.png"
-                    Stretch="None"
-                    AlignmentX="Left"/>
-            </TextBox.Background>
-        </TextBox>
-        <Label Content="Nombre" HorizontalAlignment="Left" Height="24" Margin="2,85,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
-        <TextBox x:Name="TXT_Lastname"
-            FontSize="13"
-            FontWeight="Medium"
-            FontFamily="Montserrat"                            
-            Foreground="Black"
-            CaretBrush="White"
-            BorderBrush="Black"
-            BorderThickness="0,0,0,2"
-            Height="28"
-            VerticalContentAlignment="Center"
-            Margin="15,155,640,350"
-            Padding="20,0,0,0">
+            <Label Content="Nombre" Margin="5,10,0,0" HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+            <TextBox x:Name="TXT_Name"
+                    MaxLength="20"
+                    Margin="10,0,0,0"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    Foreground="Black"
+                    CaretBrush="White"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,2"
+                    Height="28"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Padding="20,0,0,0">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Images/user.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                </TextBox.Background>
+            </TextBox>
 
-            <TextBox.Background>
-                <ImageBrush ImageSource="/Images/user.png"
-                    Stretch="None"
-                    AlignmentX="Left"/>
-            </TextBox.Background>
-        </TextBox>
-        <Label Content="Apellido" HorizontalAlignment="Left" Height="24" Margin="10,142,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
-        <Label Content="Correo" HorizontalAlignment="Left" Height="24" Margin="10,194,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
-        <TextBox x:Name="TXT_Mail"
-            FontSize="13"
-            FontWeight="Medium"
-            FontFamily="Montserrat"                            
-            Foreground="Black"
-            CaretBrush="White"
-            BorderBrush="Black"
-            BorderThickness="0,0,0,2"
-            Height="28"
-            VerticalContentAlignment="Center"
-            Margin="16,218,639,287"
-            Padding="20,0,0,0">
-            <TextBox.Background>
-                <ImageBrush ImageSource="/Images/user.png"
-                    Stretch="None"
-                    AlignmentX="Left"/>
-            </TextBox.Background>
-        </TextBox>
-        <TextBox x:Name="TXT_PhoneNumber"
-            FontSize="13"
-            FontWeight="Medium"
-            FontFamily="Montserrat"                            
-            Foreground="Black"
-            CaretBrush="White"
-            BorderBrush="Black"
-            BorderThickness="0,0,0,2"
-            Height="28"
-            VerticalContentAlignment="Center"
-            Margin="13,279,642,226"
-            Padding="20,0,0,0">
-            <TextBox.Background>
-                <ImageBrush ImageSource="/Images/user.png"
-                    Stretch="None"
-                    AlignmentX="Left"/>
-            </TextBox.Background>
-        </TextBox>
-        <Label Content="Teléfono" HorizontalAlignment="Left" Height="24" Margin="10,257,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
-        <TextBox x:Name="TXT_Password"
-            FontSize="13"
-            FontWeight="Medium"
-            FontFamily="Montserrat"                            
-            Foreground="Black"
-            CaretBrush="White"
-            BorderBrush="Black"
-            BorderThickness="0,0,0,2"
-            Height="28"
-            VerticalContentAlignment="Center"
-            Margin="17,341,638,164"
-            Padding="20,0,0,0">
-            <TextBox.Background>
-                <ImageBrush ImageSource="/Images/user.png"
-                    Stretch="None"
-                    AlignmentX="Left"/>
-            </TextBox.Background>
-        </TextBox>
-        <Label Content="Contraseña" HorizontalAlignment="Left" Height="24" Margin="10,323,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Semibold"/>
-        <Button x:Name="BTN_Save" Content="Guardar" HorizontalAlignment="Left" Height="30" Margin="30,441,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Save_Click" Style="{StaticResource MainButtonStyle}"/>
-        <DataGrid x:Name="LibrarianTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="178,58,10,52"  Style="{StaticResource ColoredDataGridStyle}" ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
+            <Label Content="Apellido" Margin="5,10,0,0" HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+            <TextBox x:Name="TXT_Lastname"
+                    MaxLength="20"
+                    Margin="10,0,0,0"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    Foreground="Black"
+                    CaretBrush="White"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,2"
+                    Height="28"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Padding="20,0,0,0">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Images/user.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                </TextBox.Background>
+            </TextBox>
+
+            <Label Content="Correo" Margin="5,10,0,0" HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+            <TextBox x:Name="TXT_Mail"
+                    MaxLength="30"
+                    Margin="10,0,0,0"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    Foreground="Black"
+                    CaretBrush="White"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,2"
+                    Height="28"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Padding="20,0,0,0">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Images/user.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                </TextBox.Background>
+            </TextBox>
+
+            <Label Content="Teléfono" Margin="5,10,0,0" HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+            <TextBox x:Name="TXT_PhoneNumber"
+                    MaxLength="10"
+                    Margin="10,0,0,0"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    Foreground="Black"
+                    CaretBrush="White"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,2"
+                    Height="28"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Padding="20,0,0,0">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Images/user.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                </TextBox.Background>
+            </TextBox>
+
+            <Label Content="Contraseña" Margin="5,10,0,0" HorizontalAlignment="Left" FontSize="14" VerticalAlignment="Top" FontFamily="Segoe UI Semibold"/>
+            <TextBox x:Name="TXT_Password"
+                    MaxLength="20"
+                    Margin="10,0,0,0"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    Foreground="Black"
+                    CaretBrush="White"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,0,2"
+                    Height="28"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Padding="20,0,0,0">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/Images/user.png"
+                                Stretch="None"
+                                AlignmentX="Left"/>
+                </TextBox.Background>
+            </TextBox>
+
+            <Label Content="Rol" VerticalContentAlignment="Center" Margin="5,10,10,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontFamily="Segoe UI Semibold"/>
+            <ComboBox x:Name="SelectRol" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Height="28"/>
+
+        </StackPanel>
+
+        <DataGrid x:Name="LibrarianTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="185,57,10,70"  Style="{StaticResource ColoredDataGridStyle}" ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding PkLibrarian}" />
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Name}" />
@@ -321,16 +348,11 @@
                 </DataGridTemplateColumn>
 
             </DataGrid.Columns>
-
-
         </DataGrid>
-        <Label Content="Rol" HorizontalAlignment="Left" Height="27" Margin="25,380,0,0" VerticalAlignment="Top" Width="113" FontFamily="Segoe UI Semibold" HorizontalContentAlignment="Center" FontSize="16"/>
-        <ComboBox x:Name="SelectRol"  HorizontalAlignment="Left" Margin="30,412,0,0" VerticalAlignment="Top" Width="102"/>
-        <Button x:Name="BTN_GoBack" Content="Regresar" HorizontalAlignment="Left" Height="24" Margin="671,17,0,0" VerticalAlignment="Top" Width="61" Click="BTN_GoBack_Click" Style="{StaticResource MainButtonStyle}"/>
-        <Button x:Name="BTN_Clear" Content="Limpiar" HorizontalAlignment="Left" Height="30" Margin="31,478,0,0" VerticalAlignment="Top" Width="108" Click="BTN_Clear_Click" Style="{StaticResource MainButtonStyle}"/>
 
-
-
-
+        <Button x:Name="BTN_Save" Content="Guardar" Width="108" Height="30" Margin="185,0,485,34" VerticalAlignment="Bottom" Click="BTN_Save_Click" Style="{StaticResource MainButtonStyle}"/>
+        <Button x:Name="BTN_GoBack" Content="Regresar" Width="108" Height="30" Margin="0,10,10,0" HorizontalAlignment="Right" VerticalAlignment="Top" Click="BTN_GoBack_Click" Style="{StaticResource MainButtonStyle}"/>
+        <Button x:Name="BTN_Clear" Content="Limpiar" Width="108" Height="30" Margin="0,0,10,34" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="BTN_Clear_Click" Style="{StaticResource MainButtonStyle}"/>
     </Grid>
 </Window>
+
