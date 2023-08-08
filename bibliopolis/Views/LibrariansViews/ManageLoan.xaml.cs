@@ -31,8 +31,21 @@ namespace bibliopolis.Views.LibrariansViews
 
         public void GetLoansTable()
         {
-            LoansTable.ItemsSource = services.GetLoans();
+            List<Loan> loans = services.GetLoans();
+
+            // Verificar y actualizar el estado de los préstamos vencidos
+            foreach (Loan loan in loans)
+            {
+                if (loan.Status == Loan.LoanStatus.Activo && loan.DueDate.Date < DateTime.Today)
+                {
+                    loan.Status = Loan.LoanStatus.Vencido;
+                    services.UpdateStatusLoan(loan);  // Actualizar el estado en la base de datos
+                }
+            }
+
+            LoansTable.ItemsSource = loans;
         }
+
 
         private void BTN_Return_Click(object sender, RoutedEventArgs e)
         {
@@ -53,8 +66,10 @@ namespace bibliopolis.Views.LibrariansViews
 
             services.DeleteLoan(DeletedLoan);
             GetLoansTable();
-
-            bookServices.UpdateUnits(loan.ISBN, "ADD_UNIT");
+            if (loan.Status == Loan.LoanStatus.Activo)
+            {
+                bookServices.UpdateUnits(loan.ISBN, "ADD_UNIT");
+            }
         }
 
         private void BTN_UpdateStatus_Click(object sender, RoutedEventArgs e)
@@ -76,7 +91,7 @@ namespace bibliopolis.Views.LibrariansViews
                 {
                     selectedLoan.Status = LoanStatus.Vencido;
                 }     
-                else if (editStatusWindow.IsDevuelto)
+                else if (editStatusWindow.IsDevuelto && selectedLoan.Status == LoanStatus.Activo)   // VERIFICAR ESTO (SIGUE FALLANDO)
                 {
                     selectedLoan.Status = LoanStatus.Devuelto;
                     BookServices bookServices = new BookServices();

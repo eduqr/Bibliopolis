@@ -75,6 +75,21 @@ namespace bibliopolis.UserControls
                 return;
             }
 
+            string registrationNumber = TXT_RegistrationNumber.Text;
+
+            using (var _context = new ApplicationDbContext())
+            {
+                bool hasOverdueLoans = _context.Loans.Any(loan =>
+                     loan.RegistrationNumber == registrationNumber &&
+                     loan.Status == Loan.LoanStatus.Vencido);
+
+                if (hasOverdueLoans)
+                {
+                    MessageBox.Show("El alumno tiene préstamos vencidos pendientes. No se puede realizar un nuevo préstamo.");
+                    return;
+                }
+            }
+
             StatusBar.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F0720B"));
             StatusTwo.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F0720B"));
 

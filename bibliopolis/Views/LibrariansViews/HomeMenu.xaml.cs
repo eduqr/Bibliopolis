@@ -1,4 +1,5 @@
 ﻿using bibliopolis.Context;
+using bibliopolis.Entities;
 using bibliopolis.Views.LibrariansViews;
 using System;
 using System.Collections.Generic;
@@ -85,16 +86,28 @@ namespace bibliopolis.Views
         {
             using (var _context = new ApplicationDbContext())
             {
-                int amountLoans= _context.Loans.Count();
-                if (amountLoans == 1)
+                int activeLoansCount = _context.Loans.Count(loan => loan.Status == Loan.LoanStatus.Activo);
+                int overdueLoansCount = _context.Loans.Count(loan => loan.Status == Loan.LoanStatus.Vencido);
+
+                string activeLoansText = activeLoansCount == 1 ? "1 préstamo activo" : activeLoansCount + " préstamos activos";
+                string overdueLoansText = overdueLoansCount == 1 ? "1 vencido" : overdueLoansCount + " vencidos";
+
+                if (activeLoansCount > 0 && overdueLoansCount > 0)
                 {
-                    LBL_LoanStats.Content = amountLoans + " préstamo actual";
+                    LBL_LoanStats.Content = $"{activeLoansText}, {overdueLoansText}";
+                }
+                else if (activeLoansCount > 0)
+                {
+                    LBL_LoanStats.Content = activeLoansText;
+                }
+                else if (overdueLoansCount > 0)
+                {
+                    LBL_LoanStats.Content = overdueLoansText;
                 }
                 else
                 {
-                    LBL_LoanStats.Content = amountLoans + " préstamos actuales";
+                    LBL_LoanStats.Content = "0 préstamos activos";
                 }
-                
             }
         }
 

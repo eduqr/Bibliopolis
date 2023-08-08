@@ -149,8 +149,7 @@ namespace bibliopolis.Services
 
                 _context.Books.Update(res);
                 _context.SaveChanges();
-            }
-                
+            }  
         }
     }
 }

@@ -107,8 +107,6 @@
                 </DataGridTemplateColumn>
 
             </DataGrid.Columns>
-
-
         </DataGrid>
         <Button x:Name="BTN_Return" Content="Regresar" HorizontalAlignment="Left" Height="28" Margin="665,17,0,0" VerticalAlignment="Top" Width="105" Click="BTN_Return_Click" Style="{StaticResource MainButtonStyle}"/>
     </Grid>
