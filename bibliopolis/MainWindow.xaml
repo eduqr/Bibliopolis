@@ -44,6 +44,8 @@
                 BorderThickness="0,0,0,2"
                 VerticalContentAlignment="Center"
                 Height="25"
+                Width="220"
+                MaxLength="50"
                 Margin="0,5,0,0"
                 Padding="30,0,0,0">
                     <TextBox.Background>
@@ -68,6 +70,8 @@
                 BorderBrush="White"
                 BorderThickness="0,0,0,2"
                 Height="25"
+                Width="220"
+                MaxLength="50"
                 VerticalContentAlignment="Center"
                 Margin="0,5,0,0"
                 Padding="30,0,0,0">

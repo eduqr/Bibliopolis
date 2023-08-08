@@ -14,6 +14,7 @@
     <None Remove="Images\book.png" />
     <None Remove="Images\books-background.jpg" />
     <None Remove="Images\bookstore.png" />
+    <None Remove="Images\email-li.png" />
     <None Remove="Images\email.png" />
     <None Remove="Images\enter.png" />
     <None Remove="Images\guide.png" />
@@ -30,11 +31,13 @@
     <None Remove="Images\texture.jpeg" />
     <None Remove="Images\upqroo_logo.png" />
     <None Remove="Images\user.png" />
+    <None Remove="Images\userPro.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Images\add-librarian.png" />
     <Resource Include="Images\books-background.jpg" />
+    <Resource Include="Images\email-li.png" />
     <Resource Include="Images\email.png" />
     <Resource Include="Images\main-key.png" />
     <Resource Include="Images\padlock.png" />
@@ -67,6 +70,7 @@
     <Resource Include="Images\stack-books.png" />
     <Resource Include="Images\upqroo_logo.png" />
     <Resource Include="Images\user.png" />
+    <Resource Include="Images\userPro.png" />
   </ItemGroup>
 
 </Project>
